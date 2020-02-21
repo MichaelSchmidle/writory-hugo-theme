@@ -1,0 +1,11 @@
+{{ $books := (index .Page.Site.Taxonomies.series ( .Page.Title | urlize)).Count }}
+<div class="shadow card">
+    {{ with .Page.Resources.GetMatch "cover" }}
+    <img src="{{ .RelPermalink }}" alt="" class="card-img-top p-3">
+    {{ end }}
+    <div class="card-body">
+        <h2 class="card-title">{{ .Page.Title }}</h2>
+        <p class="card-subtitle text-muted">Series of {{ $books }} book{{ if ne $books 1 }}s{{ end }}</p>
+        <a href="{{ .Page.RelPermalink }}" role="button" class="sy-card-link">List books</a>
+    </div>
+</div>

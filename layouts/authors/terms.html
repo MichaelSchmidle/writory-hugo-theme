@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{ partial "jumbotron.html" . }}
+{{ with .Content }}
+<div class="sy-content container pt-5">
+    {{ . }}
+</div>
+{{ end }}
+{{ if .Data.Terms }}
+<div class="container py-5">
+    <div class="row">
+        {{ range .Data.Terms.Alphabetical }}
+        <div class="col-md-12 col-lg-6 mb-3">
+            {{ partial "author-card.html" . }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ else }}
+{{ if $bookSection := .Site.GetPage "section" "books" }}{{ partial "unreferenced.html" (dict "unreferenced" "any authors" "list" "authors") }}{{ else }}{{ partial "unpublished.html" (dict "subject" "This site" "items" "authors") }}{{ end }}
+{{ end }}
+{{ end }}

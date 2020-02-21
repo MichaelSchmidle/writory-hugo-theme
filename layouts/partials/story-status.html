@@ -1,0 +1,6 @@
+This story
+{{ if .ended }}
+has <span class="sy-badge-warning">ended</span>{{ if .extended }} · Read the complete story below{{ end }}
+{{ else }}
+is <span class="sy-badge-success">developing</span>{{ if .extended }} · More chapters will follow{{ end }}
+{{ end }}

@@ -1,0 +1,3 @@
+[submodule "assets/writory-css"]
+	path = assets/writory-css
+	url = https://github.com/MichaelSchmidle/writory-css

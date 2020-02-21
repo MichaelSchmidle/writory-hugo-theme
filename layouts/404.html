@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ partial "jumbotron.html" . }}
+<div class="container py-5">
+    <div class="text-center">
+        <img src="/mirage-page-not-found.png" alt="" height="256">
+    </div>
+    <div class="sy-alert-warning mt-5" role="alert">
+        <h5>Error</h5>
+        <p>The page you requested doesn't exist.
+            {{ if $bookSection := .Site.GetPage "section" "books" }}Please refer to the books, series, and authors pages
+            to find a list of available content on this site.{{ else }}This is most likely due to the fact that this
+            site hasn't published any books yet. Please check back soon!{{ end }}</p>
+    </div>
+</div>
+{{ end }}

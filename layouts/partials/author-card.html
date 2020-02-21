@@ -1,0 +1,17 @@
+{{ $books := (index .Page.Site.Taxonomies.authors ( .Page.Title | urlize)).Count }}
+<div class="shadow card">
+    {{ with .Page.Resources.GetMatch "cover "}}<img src="#" alt="" class="card-img-top">{{ end }}
+    <div class="card-body">
+        <div class="media">
+            {{ with .Page.Resources.GetMatch "avatar" }}<img src="{{ .RelPermalink }}" alt="" class="sy-avatar"
+                width=64>{{ end }}
+            <div class="media-body">
+                <h2 class="card-title">{{ .Page.Title }}</h2>
+                <p class="card-subtitle text-muted">Author of {{ $books }} book{{ if ne $books 1 }}s{{ end }}
+                </p>
+                {{ with .Page.Summary }}<p class="mt-3 mb-0">{{ . }}</p>{{ end }}
+                <a href="{{ .Page.RelPermalink }}" role="button" class="sy-card-link">List books</a>
+            </div>
+        </div>
+    </div>
+</div>

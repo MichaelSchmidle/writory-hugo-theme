@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="sy-jumbotron">
+    <div class="container">
+        {{ if $avatar := .Resources.GetMatch "avatar" }}
+        <div class="media">
+            <img src="{{ $avatar.RelPermalink }}" alt="" class="sy-avatar" width=64>
+            <div class="media-body">
+                {{ end }}
+                <h1>{{ .Title }}</h1>
+                {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+                {{ with .Resources.GetMatch "avatar" }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ with .Content }}
+<div class="sy-content container py-5">
+    {{ . }}
+</div>
+{{ end }}
+{{ if .Pages }}
+<div class="container py-5">
+    <p>{{ .Title }} is author of the following book{{ if ne (len .Pages) 1 }}s{{ end }}:</p>
+    <div class="row">
+        {{ range (.Pages.ByParam "featured") }}
+        <div class="col-md-6 col-lg-4 mb-3">
+            {{/* In the following, .Parent is required since authors on branch bundles doesn't work yet.
+            See https://discourse.gohugo.io/t/how-to-represent-books-with-chapters-in-hugo/23050 */}}
+            {{ partial "book-card.html" . }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ else }}
+{{ if $bookSection := .Site.GetPage "section" "books" }}{{ partial "unreferenced.html" (dict "unreferenced" (print .Title " as author") "items" "books") }}{{ else }}{{ partial "unpublished.html" (dict "subject" .Title "items" "books") }}{{ end }}
+{{ end }}
+{{ end }}

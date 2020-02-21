@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ partial "jumbotron.html" . }}
+{{ with .Content }}
+<div class="sy-content container pt-5">
+    {{ . }}
+</div>
+{{ end }}
+<div class="container py-5">
+    <div class="row">
+        {{ range ((where .Pages "type" "ne" "chapter").ByParam "featured") }}
+        <div class="col-md-6 col-lg-4 mb-3">
+            {{ partial "book-card.html" . }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

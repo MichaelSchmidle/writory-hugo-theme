@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="sy-jumbotron-home">
+    <div>
+        <h1>{{ if .Site.Params.logo }}<img src="{{ .Site.Params.logo }}"
+                alt="{{ .Site.Title }}">{{ else }}{{ .Site.Title }}{{ end }}</h1>
+        <p>{{ .Site.Params.description | markdownify }}</p>
+    </div>
+</div>
+{{ if $bookSection := .Site.GetPage "section" "books" }}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <p>
+                <img src="/mirage-welcome.png" alt="" class="img-fluid">
+            </p>
+        </div>
+        <div class="sy-content col">
+            {{ if .Content }}
+            {{ .Content }}
+            {{ else }}
+            <h1>Hi, It’s a Pleasure to Meet You</h1>
+            <p>This is the place where we, the authors, publish our stories. You can read more<a href="/authors/">about
+                    us</a> or dive right into our <a href="/books/">books</a>!</p>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ $books := .GetPage "/books" }}
+{{ $series := .GetPage "/series" }}
+{{ if or $books $series }}
+<div class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            {{ if $books.Pages }}
+            <div class="col-md-6 col-lg-4 offset-lg-1">
+                <h6>Featured Book</h6>
+                {{ range first 1 ($books.Pages.ByParam "featured")}}
+                {{ partial "book-card.html" . }}
+                {{ end }}
+            </div>
+            {{ end }}
+            {{ if and $books $series }}
+            <hr class="col d-block d-md-none">
+            {{ end }}
+            {{ if $series.Pages }}
+            <div class="col-md-6 col-lg-4 offset-lg-2">
+                <h6>Featured Series</h6>
+                {{ range first 1 ($series.Pages.ByParam "featured") }}
+                {{ partial "series-card.html" . }}
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ else }}
+{{ partial "unpublished.html" (dict "subject" "This site" "items" "featured content") }}
+{{ end }}
+{{ end }}

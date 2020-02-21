@@ -1,0 +1,20 @@
+<div class="shadow card">
+    {{ with .Resources.GetMatch "cover" }}
+    <img src="{{ .RelPermalink }}" alt="" class="card-img-top p-3">
+    {{ end }}
+    <div class="card-body">
+        {{ if .Params.series }}
+        <small class="card-subtitle text-muted">{{ .Params.series }}</small>
+        {{ end }}
+        <h2 class="card-title">{{ .Title }}</h2>
+        {{ if .Params.authors }}
+        <p class="card-subtitle text-muted">by
+            {{ delimit .Params.authors ", " }}
+        </p>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" role="button" class="sy-card-link">Read it</a>
+    </div>
+    <div class="card-footer text-muted">
+        {{ partial "story-status.html" (dict "ended" .Params.ended) }}
+    </div>
+</div>

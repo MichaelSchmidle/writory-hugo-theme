@@ -1,0 +1,9 @@
+<div class="card{{ with .Get "class" }} {{ . }}{{ end }}">
+    <div class="card-body">
+        {{ if .Get "markdownify" }}
+        {{ .Inner | markdownify }}
+        {{ else }}
+        {{ .Inner }}
+        {{ end }}
+    </div>
+</div>

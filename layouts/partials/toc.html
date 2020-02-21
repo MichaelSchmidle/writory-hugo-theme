@@ -1,0 +1,14 @@
+{{ $active := .active }}
+<h6>Table of Contents</h6>
+<div class="list-group">
+    <a href="{{ .book.RelPermalink }}"
+        class="list-group-item list-group-item-action{{ if eq .book $active }} active{{ end }}">Index</a>
+    {{ range .book.Pages.ByParam "order" }}
+    <a href="{{ .RelPermalink }}"
+        class="list-group-item list-group-item-action{{ if eq . $active }} active{{ end }}">{{ .Title }}</a>
+    {{ end }}
+</div>
+{{ if not .book.Params.ended }}
+<p class="text-muted mt-3">
+    {{ partial "story-status.html" (dict "ended" .book.Params.ended "extended" true) }}</p>
+{{ end }}

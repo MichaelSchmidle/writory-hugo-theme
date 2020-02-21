@@ -1,0 +1,12 @@
+name = "Writory Hugo Theme"
+license = "MIT"
+licenselink = "https://github.com/MichaelSchmidle/writory-hugo-theme/blob/master/LICENSE"
+description = "Hugo theme designed to publish books and chapters"
+homepage = "https://writory.org/"
+tags = []
+features = []
+min_version = "0.65"
+
+[author]
+  name = "Michael Schmidle"
+  homepage = "https://blog.ypertex.com/"

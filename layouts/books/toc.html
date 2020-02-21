@@ -1,0 +1,86 @@
+{{ define "main" }}
+<div class="sy-status-bar">
+    <div class="text-center">
+        {{ partial "story-status.html" (dict "ended" .Params.ended "extended" true) }}
+    </div>
+</div>
+<div class="sy-jumbotron">
+    <div class="row align-items-center">
+        <div class="col">
+            <h1 class="display-3">{{ .Title }}</h1>
+            {{ with .Params.authors }}<small class="text-muted">By {{ delimit . ", " }}</small>{{ end }}
+            {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+        </div>
+        {{ with .Resources.GetMatch "cover" }}
+        <div class="col-lg-4">
+            <img src="{{ .RelPermalink }}" class="mw-100 mh-100">
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ if (or .Content .Pages) }}
+<div class="container py-5">
+    <div class="row">
+        <div class="col{{ if .Pages }}-lg-8{{ end }}">
+            {{ with .Content }}
+            <div class="sy-content">
+                {{ . }}
+            </div>
+            {{ end }}
+            {{ if and .Content .Pages }}
+            <hr>
+            {{ end }}
+            {{ if .Pages }}
+            <h6>First Chapter</h6>
+            <div class="shadow card">
+                <div class="card-body">
+                    {{ with index (first 1 (.Pages.ByParam "order")) 0 }}
+                    <h5 class="card-title">{{ .Title }}</h5>
+                    <p class="card-subtitle">{{ .Summary }}</p>
+                    <a href="{{ .RelPermalink }}" class="sy-card-link">Read it</a>
+                    {{ else }}
+                    {{ partial "story-status.html" (dict "ended" .Params.ended "extended" true) }}
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ if .Pages }}
+        <div class="col-lg d-lg-none">
+            <hr>
+        </div>
+        <div class="col">
+            {{ partial "toc.html" (dict "book" . "active" . ) }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ if or .Params.series .Params.authors }}
+<div class="bg-light py-5">
+    <div class="container">
+        {{ with .Params.series }}
+        <h6>About the Series</h6>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                {{ partial "series-card.html" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize))) }}
+            </div>
+        </div>
+        {{ end }}
+        {{ if and .Params.series .Params.authors}}
+        <hr>
+        {{ end }}
+        {{ with .Params.authors }}
+        <h6>About the Author{{ if ne (len .) 1 }}s{{ end }}</h6>
+        <div class="row">
+            {{ range . }}
+            <div class="col-md-12 col-lg-6 mb-3">
+                {{ partial "author-card.html" ($.Site.GetPage (printf "/%s/%s" "authors" (. | urlize))) }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}
