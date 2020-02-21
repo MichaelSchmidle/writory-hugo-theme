@@ -1,9 +1,9 @@
 {{ define "main" }}
-<div class="sy-jumbotron">
+<div class="wy-jumbotron">
     <div class="container">
         {{ if $avatar := .Resources.GetMatch "avatar" }}
         <div class="media">
-            <img src="{{ $avatar.RelPermalink }}" alt="" class="sy-avatar" width=64>
+            <img src="{{ $avatar.RelPermalink }}" alt="" class="wy-avatar" width=64>
             <div class="media-body">
                 {{ end }}
                 <h1>{{ .Title }}</h1>
@@ -15,7 +15,7 @@
     </div>
 </div>
 {{ with .Content }}
-<div class="sy-content container py-5">
+<div class="wy-content container py-5">
     {{ . }}
 </div>
 {{ end }}
@@ -27,7 +27,7 @@
         <div class="col-md-6 col-lg-4 mb-3">
             {{/* In the following, .Parent is required since authors on branch bundles doesn't work yet.
             See https://discourse.gohugo.io/t/how-to-represent-books-with-chapters-in-hugo/23050 */}}
-            {{ partial "book-card.html" . }}
+            {{ partial "book-card.html" (dict "book" . "primary" true) }}
         </div>
         {{ end }}
     </div>

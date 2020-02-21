@@ -8,4 +8,13 @@
     rel="stylesheet">
 {{ $css := resources.Get (default "medium-blue.css" .Site.Params.writory.colorScheme) }}
 <link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}">
-{{ partial "favicon.html" . }}
+{{ partial "_favicons.html" . }}
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ if not .IsHome }}{{ .Page.Title }} · {{ end }}{{ .Site.Title }}" />
+{{ block "social-media-meta" . }}
+{{ with .Site.Params.Description | markdownify | plainify }}
+<meta property="og:description" content="{{ . }}" />{{ end }}
+{{ with .Site.Params.cover }}
+<meta property="og:image" content="" />{{ end }}
+<meta name="twitter:card" content="summary_large_image" />
+{{ end }}

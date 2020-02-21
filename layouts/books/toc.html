@@ -1,10 +1,10 @@
 {{ define "main" }}
-<div class="sy-status-bar">
+<div class="wy-status-bar">
     <div class="text-center">
         {{ partial "story-status.html" (dict "ended" .Params.ended "extended" true) }}
     </div>
 </div>
-<div class="sy-jumbotron">
+<div class="wy-jumbotron">
     <div class="row align-items-center">
         <div class="col">
             <h1 class="display-3">{{ .Title }}</h1>
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col{{ if .Pages }}-lg-8{{ end }}">
             {{ with .Content }}
-            <div class="sy-content">
+            <div class="wy-content">
                 {{ . }}
             </div>
             {{ end }}
@@ -37,7 +37,7 @@
                     {{ with index (first 1 (.Pages.ByParam "order")) 0 }}
                     <h5 class="card-title">{{ .Title }}</h5>
                     <p class="card-subtitle">{{ .Summary }}</p>
-                    <a href="{{ .RelPermalink }}" class="sy-card-link">Read it</a>
+                    <a href="{{ .RelPermalink }}" class="wy-card-link btn-primary">Read it</a>
                     {{ else }}
                     {{ partial "story-status.html" (dict "ended" .Params.ended "extended" true) }}
                     {{ end }}
@@ -63,7 +63,7 @@
         <h6>About the Series</h6>
         <div class="row">
             <div class="col-md-6 col-lg-4">
-                {{ partial "series-card.html" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize))) }}
+                {{ partial "series-card.html" (dict "series" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize)))) }}
             </div>
         </div>
         {{ end }}
@@ -75,7 +75,7 @@
         <div class="row">
             {{ range . }}
             <div class="col-md-12 col-lg-6 mb-3">
-                {{ partial "author-card.html" ($.Site.GetPage (printf "/%s/%s" "authors" (. | urlize))) }}
+                {{ partial "author-card.html" (dict "author" ($.Site.GetPage (printf "/%s/%s" "authors" (. | urlize)))) }}
             </div>
             {{ end }}
         </div>

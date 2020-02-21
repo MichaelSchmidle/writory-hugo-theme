@@ -1,11 +1,12 @@
-{{ $books := (index .Page.Site.Taxonomies.series ( .Page.Title | urlize)).Count }}
 <div class="shadow card">
-    {{ with .Page.Resources.GetMatch "cover" }}
+    {{ with .series.Page.Resources.GetMatch "cover" }}
     <img src="{{ .RelPermalink }}" alt="" class="card-img-top p-3">
     {{ end }}
     <div class="card-body">
-        <h2 class="card-title">{{ .Page.Title }}</h2>
-        <p class="card-subtitle text-muted">Series of {{ $books }} book{{ if ne $books 1 }}s{{ end }}</p>
-        <a href="{{ .Page.RelPermalink }}" role="button" class="sy-card-link">List books</a>
+        <h2 class="card-title">{{ .series.Page.Title }}</h2>
+        <p class="card-subtitle text-muted">Series of
+            {{ len .series.Pages }}book{{ if ne (len .series.Pages) 1 }}s{{ end }}</p>
+        <a href="{{ .series.Page.RelPermalink }}" role="button"
+            class="wy-card-link btn-{{ if not .primary }}outline-{{ end }}primary">List books</a>
     </div>
 </div>

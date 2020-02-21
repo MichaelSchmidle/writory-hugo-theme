@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="sy-status-bar">
+<div class="wy-status-bar">
     <div>
         <span class="text-white-50"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> ·</span> Chapter
         {{ .Params.order }} of
@@ -10,7 +10,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-lg-8">
-            <div class="sy-content">
+            <div class="wy-content">
                 {{ .Content }}
             </div>
             <hr>
@@ -21,7 +21,7 @@
                     {{ with $book.Prev . }}
                     <h5 class="card-title">{{ .Title }}</h5>
                     <p class="card-subtitle">{{ .Summary }}</p>
-                    <a href="{{ .RelPermalink }}" class="sy-card-link">Read it</a>
+                    <a href="{{ .RelPermalink }}" class="wy-card-link btn-primary">Read it</a>
                     {{ else }}
                     {{ partial "story-status.html" (dict "ended" .Parent.Params.ended "extended" true) }}
                     {{ end }}

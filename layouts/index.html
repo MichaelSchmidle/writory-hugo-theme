@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="sy-jumbotron-home">
+<div class="wy-jumbotron-home">
     <div>
         <h1>{{ if .Site.Params.logo }}<img src="{{ .Site.Params.logo }}"
                 alt="{{ .Site.Title }}">{{ else }}{{ .Site.Title }}{{ end }}</h1>
@@ -14,7 +14,7 @@
                 <img src="/mirage-welcome.png" alt="" class="img-fluid">
             </p>
         </div>
-        <div class="sy-content col">
+        <div class="wy-content col">
             {{ if .Content }}
             {{ .Content }}
             {{ else }}
@@ -35,7 +35,7 @@
             <div class="col-md-6 col-lg-4 offset-lg-1">
                 <h6>Featured Book</h6>
                 {{ range first 1 ($books.Pages.ByParam "featured")}}
-                {{ partial "book-card.html" . }}
+                {{ partial "book-card.html" (dict "book" . "primary" true) }}
                 {{ end }}
             </div>
             {{ end }}
@@ -46,7 +46,7 @@
             <div class="col-md-6 col-lg-4 offset-lg-2">
                 <h6>Featured Series</h6>
                 {{ range first 1 ($series.Pages.ByParam "featured") }}
-                {{ partial "series-card.html" . }}
+                {{ partial "series-card.html" (dict "series" . "primary" true) }}
                 {{ end }}
             </div>
             {{ end }}

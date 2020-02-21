@@ -1,20 +1,21 @@
 <div class="shadow card">
-    {{ with .Resources.GetMatch "cover" }}
+    {{ with .book.Resources.GetMatch "cover" }}
     <img src="{{ .RelPermalink }}" alt="" class="card-img-top p-3">
     {{ end }}
     <div class="card-body">
-        {{ if .Params.series }}
-        <small class="card-subtitle text-muted">{{ .Params.series }}</small>
+        {{ if .book.Params.series }}
+        <small class="card-subtitle text-muted">{{ .book.Params.series }}</small>
         {{ end }}
-        <h2 class="card-title">{{ .Title }}</h2>
-        {{ if .Params.authors }}
+        <h2 class="card-title">{{ .book.Title }}</h2>
+        {{ if .book.Params.authors }}
         <p class="card-subtitle text-muted">by
-            {{ delimit .Params.authors ", " }}
+            {{ delimit .book.Params.authors ", " }}
         </p>
         {{ end }}
-        <a href="{{ .RelPermalink }}" role="button" class="sy-card-link">Read it</a>
+        <a href="{{ .book.RelPermalink }}" role="button"
+            class="wy-card-link btn-{{ if not .primary }}outline-{{ end }}primary">Read it</a>
     </div>
     <div class="card-footer text-muted">
-        {{ partial "story-status.html" (dict "ended" .Params.ended) }}
+        {{ partial "story-status.html" (dict "ended" .book.Params.ended) }}
     </div>
 </div>

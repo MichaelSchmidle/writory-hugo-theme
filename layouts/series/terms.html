@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ partial "jumbotron.html" . }}
 {{ with .Content }}
-<div class="sy-content container pt-5">
+<div class="wy-content container pt-5">
     {{ . }}
 </div>
 {{ end }}
@@ -10,7 +10,7 @@
     <div class="row">
         {{ range .Data.Terms.Alphabetical }}
         <div class="col-md-6 col-lg-4 mb-3">
-            {{ partial "series-card.html" . }}
+            {{ partial "series-card.html" (dict "series" . "primary" true) }}
         </div>
         {{ end }}
     </div>
