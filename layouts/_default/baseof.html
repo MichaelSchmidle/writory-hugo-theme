@@ -2,86 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
-    {{ with .Site.Params.Description | markdownify | plainify }}
-    <meta name="description" content="{{ . }}">{{ end }}
-    {{ hugo.Generator }}
-    <link
-        href="https://fonts.googleapis.com/css?family=Playfair+Display:600,600i|Raleway:400,400i,700,700i&display=swap"
-        rel="stylesheet">
-    {{ $css := resources.Get (default "medium-blue.css" .Site.Params.writory.colorScheme) }}
-    <link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}">
-    {{ partial "favicon.html" . }}
+    {{ partial "_head.html" . }}
 </head>
 
 <body>
-    <nav class="sy-nav-bar">
-        <div class="container">
-            <a class="navbar-brand" href="{{ .Site.BaseURL | relURL }}">{{ if .Site.Params.logogram }}<img
-                    src="/{{ .Site.Params.logogram }}" alt="{{ .Site.Title }}">{{ else }}{{ .Site.Title }}{{ end }}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a href="{{ .Site.BaseURL | relURL }}"
-                        class="nav-item nav-link{{ with .IsHome }} active{{ end }}">Home{{ with .IsHome }} <span
-                            class="sr-only">(current)</span>{{ end }}</a>
-                    {{ if $bookSection := .Site.GetPage "section" "books" }}<a href="{{ $bookSection.RelPermalink }}"
-                        class="nav-item nav-link{{ if in .RelPermalink $bookSection.RelPermalink }} active{{ end }}">Books</a>{{ end }}
-                    <a href="/series"
-                        class="nav-item nav-link{{ if in .RelPermalink "/series/" }} active{{ end }}">Series</a>
-                    <a href="/authors"
-                        class="nav-item nav-link{{ if in .RelPermalink "/authors/" }} active{{ end }}">Authors</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    {{ partial "_nav.html" . }}
     <main>
         {{ block "main" . }}{{ end }}
     </main>
     <footer class="sy-footer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg">
-                    <p class="mb-0"><small>Copyright ©
-                            {{ .Site.LastChange.Format "2006" }}{{ with .Site.Params.authors }} by
-                            {{ (delimit . ", ") | markdownify }}{{ end }}</small></p>
-                    <p><small>{{ with .Site.Copyright }}{{ . | markdownify }}{{ else }}All rights
-                            reserved{{ end }}</small></p>
-                </div>
-                {{ if .Site.Params.logogram }}
-                <div class="col-lg-1">
-                    <img src="/{{ .Site.Params.logogram }}" alt="{{ .Site.Title }}" class="wy-logogram">
-                </div>
-                {{ end }}
-                <div class="col-lg">
-                    {{ with .Site.Params.thirdPartyReferences }}
-                    {{ range . }}
-                    <p class="mb-0"><small>{{ . | markdownify }}</small></p>
-                    {{ end }}
-                    {{ else }}
-                    <p class="mb-0"><small>Mirage illustrations licensed by <a href="https://icons8.com/">Icons8
-                                LLC.</a></small></p>
-                    <p><small>Made with <a href="https://gohugo.io/">Hugo</a> and <a
-                                href="https://writory.org/">Writory</a></small></p>
-                    {{ end }}
-                </div>
-            </div>
-        </div>
+        {{ partial "_footer.html" . }}
     </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    {{ partial "_foot.html" . }}
 </body>
 
 </html>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg">
+            <p class="mb-0"><small>Copyright ©
+                    {{ .Site.LastChange.Format "2006" }}{{ with .Site.Params.authors }} by
+                    {{ (delimit . ", ") | markdownify }}{{ end }}</small></p>
+            <p><small>{{ with .Site.Copyright }}{{ . | markdownify }}{{ else }}All rights
+                    reserved{{ end }}</small></p>
+        </div>
+        {{ if .Site.Params.logogram }}
+        <div class="col-lg-1">
+            <img src="/{{ .Site.Params.logogram }}" alt="{{ .Site.Title }}" class="wy-logogram">
+        </div>
+        {{ end }}
+        <div class="col-lg">
+            {{ with .Site.Params.thirdPartyReferences }}
+            {{ range . }}
+            <p class="mb-0"><small>{{ . | markdownify }}</small></p>
+            {{ end }}
+            {{ else }}
+            <p class="mb-0"><small>Mirage illustrations licensed by <a href="https://icons8.com/">Icons8
+                        LLC.</a></small></p>
+            <p><small>Made with <a href="https://gohugo.io/">Hugo</a> and <a
+                        href="https://writory.org/">Writory</a></small></p>
+            {{ end }}
+        </div>
+    </div>
+</div>

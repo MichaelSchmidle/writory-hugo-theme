@@ -1,0 +1,23 @@
+<nav class="sy-nav-bar">
+    <div class="container">
+        <a class="navbar-brand" href="{{ .Site.BaseURL | relURL }}">{{ if .Site.Params.logogram }}<img
+                src="/{{ .Site.Params.logogram }}" alt="{{ .Site.Title }}">{{ else }}{{ .Site.Title }}{{ end }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a href="{{ .Site.BaseURL | relURL }}"
+                    class="nav-item nav-link{{ with .IsHome }} active{{ end }}">Home{{ with .IsHome }} <span
+                        class="sr-only">(current)</span>{{ end }}</a>
+                {{ if $bookSection := .Site.GetPage "section" "books" }}<a href="{{ $bookSection.RelPermalink }}"
+                    class="nav-item nav-link{{ if in .RelPermalink $bookSection.RelPermalink }} active{{ end }}">Books</a>{{ end }}
+                <a href="/series"
+                    class="nav-item nav-link{{ if in .RelPermalink "/series/" }} active{{ end }}">Series</a>
+                <a href="/authors"
+                    class="nav-item nav-link{{ if in .RelPermalink "/authors/" }} active{{ end }}">Authors</a>
+            </div>
+        </div>
+    </div>
+</nav>
