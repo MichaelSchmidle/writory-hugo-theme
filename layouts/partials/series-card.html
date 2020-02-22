@@ -5,7 +5,7 @@
     <div class="card-body">
         <h2 class="card-title">{{ .series.Page.Title }}</h2>
         <p class="card-subtitle text-muted">Series of
-            {{ len .series.Pages }}book{{ if ne (len .series.Pages) 1 }}s{{ end }}</p>
+            {{ len .series.Pages }} book{{ if ne (len .series.Pages) 1 }}s{{ end }}</p>
         <a href="{{ .series.Page.RelPermalink }}" role="button"
             class="wy-card-link btn-{{ if not .primary }}outline-{{ end }}primary">List books</a>
     </div>

@@ -1,0 +1,8 @@
+<figure>
+    <img src="{{ .Get "src" }}" {{ with .Get "class" }}class="{{ . }}" {{ end }}>
+    {{ if .Inner | markdownify }}
+    <figcaption>{{ .Inner | markdownify }}</figcaption>
+    {{ else if $resource := $.Page.Resources.GetMatch (.Get "src") }}
+    <figcaption>{{ $resource.Title | markdownify }}</figcaption>
+    {{ end }}
+</figure>
