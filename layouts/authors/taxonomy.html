@@ -2,12 +2,15 @@
 <div class="wy-jumbotron">
     <div class="container">
         {{ if $avatar := .Resources.GetMatch "avatar" }}
-        <div class="media">
+        <div class="media p-0">
             <img src="{{ $avatar.RelPermalink }}" alt="" class="wy-avatar" width=64>
-            <div class="media-body">
+            <div class="media-body p-0">
                 {{ end }}
                 <h1>{{ .Title }}</h1>
                 {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+                {{ with .Params.links }}
+                {{ partial "author-links.html" . }}
+                {{ end }}
                 {{ with .Resources.GetMatch "avatar" }}
             </div>
         </div>

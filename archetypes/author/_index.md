@@ -1,6 +1,7 @@
 ---
 title: {{ replace .Name "-" " " | title }}
 summary: ""
+links: []
 resources:
 - name: cover
   src: ""

@@ -596,7 +596,7 @@ pre code {
   overflow-y: scroll;
 }
 
-.container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+.container, .wy-status-bar div {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -604,22 +604,22 @@ pre code {
   margin-left: auto;
 }
 @media (min-width: 576px) {
-  .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container, .wy-status-bar div {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container, .wy-status-bar div {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container, .wy-status-bar div {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container, .wy-status-bar div {
     max-width: 1140px;
   }
 }
@@ -633,22 +633,22 @@ pre code {
 }
 
 @media (min-width: 576px) {
-  .container-sm, .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container-sm, .container, .wy-status-bar div {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container-md, .container-sm, .container, .wy-status-bar div {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container-lg, .container-md, .container-sm, .container, .wy-status-bar div {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container-xl, .container-lg, .container-md, .container-sm, .container, .wy-status-bar div {
     max-width: 1140px;
   }
 }
@@ -4077,7 +4077,7 @@ input[type=button].btn-block {
   justify-content: space-between;
   padding: 0.5rem 1rem;
 }
-.navbar .container, .navbar .wy-status-bar div, .wy-status-bar .navbar div, .navbar .wy-jumbotron div, .wy-jumbotron .navbar div, .navbar .wy-jumbotron-home div, .wy-jumbotron-home .navbar div, .wy-nav-bar .container, .wy-nav-bar .wy-status-bar div, .wy-status-bar .wy-nav-bar div, .wy-nav-bar .wy-jumbotron div, .wy-jumbotron .wy-nav-bar div, .wy-nav-bar .wy-jumbotron-home div, .wy-jumbotron-home .wy-nav-bar div,
+.navbar .container, .navbar .wy-status-bar div, .wy-status-bar .navbar div, .wy-nav-bar .container, .wy-nav-bar .wy-status-bar div, .wy-status-bar .wy-nav-bar div,
 .navbar .container-fluid,
 .wy-nav-bar .container-fluid,
 .navbar .container-sm,
@@ -4167,7 +4167,7 @@ input[type=button].btn-block {
 }
 
 @media (max-width: 575.98px) {
-  .navbar-expand-sm > .container, .wy-status-bar .navbar-expand-sm > div, .wy-jumbotron .navbar-expand-sm > div, .wy-jumbotron-home .navbar-expand-sm > div, .wy-nav-bar > .container, .wy-status-bar .wy-nav-bar > div, .wy-jumbotron .wy-nav-bar > div, .wy-jumbotron-home .wy-nav-bar > div,
+  .navbar-expand-sm > .container, .wy-status-bar .navbar-expand-sm > div, .wy-nav-bar > .container, .wy-status-bar .wy-nav-bar > div,
 .navbar-expand-sm > .container-fluid,
 .wy-nav-bar > .container-fluid,
 .navbar-expand-sm > .container-sm,
@@ -4197,7 +4197,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-sm > .container, .wy-status-bar .navbar-expand-sm > div, .wy-jumbotron .navbar-expand-sm > div, .wy-jumbotron-home .navbar-expand-sm > div, .wy-nav-bar > .container, .wy-status-bar .wy-nav-bar > div, .wy-jumbotron .wy-nav-bar > div, .wy-jumbotron-home .wy-nav-bar > div,
+  .navbar-expand-sm > .container, .wy-status-bar .navbar-expand-sm > div, .wy-nav-bar > .container, .wy-status-bar .wy-nav-bar > div,
 .navbar-expand-sm > .container-fluid,
 .wy-nav-bar > .container-fluid,
 .navbar-expand-sm > .container-sm,
@@ -4219,7 +4219,7 @@ input[type=button].btn-block {
   }
 }
 @media (max-width: 767.98px) {
-  .navbar-expand-md > .container, .wy-status-bar .navbar-expand-md > div, .wy-jumbotron .navbar-expand-md > div, .wy-jumbotron-home .navbar-expand-md > div,
+  .navbar-expand-md > .container, .wy-status-bar .navbar-expand-md > div,
 .navbar-expand-md > .container-fluid,
 .navbar-expand-md > .container-sm,
 .navbar-expand-md > .container-md,
@@ -4244,7 +4244,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-md > .container, .wy-status-bar .navbar-expand-md > div, .wy-jumbotron .navbar-expand-md > div, .wy-jumbotron-home .navbar-expand-md > div,
+  .navbar-expand-md > .container, .wy-status-bar .navbar-expand-md > div,
 .navbar-expand-md > .container-fluid,
 .navbar-expand-md > .container-sm,
 .navbar-expand-md > .container-md,
@@ -4261,7 +4261,7 @@ input[type=button].btn-block {
   }
 }
 @media (max-width: 991.98px) {
-  .navbar-expand-lg > .container, .wy-status-bar .navbar-expand-lg > div, .wy-jumbotron .navbar-expand-lg > div, .wy-jumbotron-home .navbar-expand-lg > div,
+  .navbar-expand-lg > .container, .wy-status-bar .navbar-expand-lg > div,
 .navbar-expand-lg > .container-fluid,
 .navbar-expand-lg > .container-sm,
 .navbar-expand-lg > .container-md,
@@ -4286,7 +4286,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-lg > .container, .wy-status-bar .navbar-expand-lg > div, .wy-jumbotron .navbar-expand-lg > div, .wy-jumbotron-home .navbar-expand-lg > div,
+  .navbar-expand-lg > .container, .wy-status-bar .navbar-expand-lg > div,
 .navbar-expand-lg > .container-fluid,
 .navbar-expand-lg > .container-sm,
 .navbar-expand-lg > .container-md,
@@ -4303,7 +4303,7 @@ input[type=button].btn-block {
   }
 }
 @media (max-width: 1199.98px) {
-  .navbar-expand-xl > .container, .wy-status-bar .navbar-expand-xl > div, .wy-jumbotron .navbar-expand-xl > div, .wy-jumbotron-home .navbar-expand-xl > div,
+  .navbar-expand-xl > .container, .wy-status-bar .navbar-expand-xl > div,
 .navbar-expand-xl > .container-fluid,
 .navbar-expand-xl > .container-sm,
 .navbar-expand-xl > .container-md,
@@ -4328,7 +4328,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-xl > .container, .wy-status-bar .navbar-expand-xl > div, .wy-jumbotron .navbar-expand-xl > div, .wy-jumbotron-home .navbar-expand-xl > div,
+  .navbar-expand-xl > .container, .wy-status-bar .navbar-expand-xl > div,
 .navbar-expand-xl > .container-fluid,
 .navbar-expand-xl > .container-sm,
 .navbar-expand-xl > .container-md,
@@ -4348,7 +4348,7 @@ input[type=button].btn-block {
   flex-flow: row nowrap;
   justify-content: flex-start;
 }
-.navbar-expand > .container, .wy-status-bar .navbar-expand > div, .wy-jumbotron .navbar-expand > div, .wy-jumbotron-home .navbar-expand > div,
+.navbar-expand > .container, .wy-status-bar .navbar-expand > div,
 .navbar-expand > .container-fluid,
 .navbar-expand > .container-sm,
 .navbar-expand > .container-md,
@@ -4367,7 +4367,7 @@ input[type=button].btn-block {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
-.navbar-expand > .container, .wy-status-bar .navbar-expand > div, .wy-jumbotron .navbar-expand > div, .wy-jumbotron-home .navbar-expand > div,
+.navbar-expand > .container, .wy-status-bar .navbar-expand > div,
 .navbar-expand > .container-fluid,
 .navbar-expand > .container-sm,
 .navbar-expand > .container-md,
@@ -10063,7 +10063,7 @@ h3 {
     min-width: 992px !important;
   }
 
-  .container, .wy-status-bar div, .wy-jumbotron div, .wy-jumbotron-home div {
+  .container, .wy-status-bar div {
     min-width: 992px !important;
   }
 

@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="wy-jumbotron-home">
-    <div>
+    <div class="container">
         <h1>{{ if .Site.Params.logo }}<img src="{{ .Site.Params.logo }}"
                 alt="{{ .Site.Title }}">{{ else }}{{ .Site.Title }}{{ end }}</h1>
         <p>{{ .Site.Params.description | markdownify }}</p>

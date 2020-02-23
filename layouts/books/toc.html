@@ -5,17 +5,19 @@
     </div>
 </div>
 <div class="wy-jumbotron">
-    <div class="row align-items-center">
-        <div class="col">
-            <h1 class="display-3">{{ .Title }}</h1>
-            {{ with .Params.authors }}<small class="text-muted">By {{ delimit . ", " }}</small>{{ end }}
-            {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1 class="display-3">{{ .Title }}</h1>
+                {{ with .Params.authors }}<small class="text-muted">By {{ delimit . ", " }}</small>{{ end }}
+                {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+            </div>
+            {{ with .Resources.GetMatch "cover" }}
+            <div class="col-lg-4">
+                <img src="{{ .RelPermalink }}" class="mw-100 mh-100">
+            </div>
+            {{ end }}
         </div>
-        {{ with .Resources.GetMatch "cover" }}
-        <div class="col-lg-4">
-            <img src="{{ .RelPermalink }}" class="mw-100 mh-100">
-        </div>
-        {{ end }}
     </div>
 </div>
 {{ if (or .Content .Pages) }}
