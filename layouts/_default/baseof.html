@@ -3,6 +3,13 @@
 
 <head>
     {{ partial "_head.html" . }}
+    {{ block "social-media-meta" . }}
+    {{ with .Site.Params.Description | markdownify | plainify }}
+    <meta property="og:description" content="{{ . }}" />{{ end }}
+    {{ with .Site.Params.cover }}
+    <meta property="og:image" content="{{ . | relURL }}" />{{ end }}
+    <meta name="twitter:card" content="summary_large_image" />
+    {{ end }}
 </head>
 
 <body>

@@ -1,3 +1,11 @@
+{{ define "social-media-meta" }}
+{{ with .Summary | markdownify | plainify }}
+<meta property="og:description" content="{{ . }}" />{{ end }}
+{{ with .Resources.GetMatch "cover" }}
+<meta property="og:image" content="{{ .RelPermalink }}" />{{ end }}
+<meta name="twitter:card" content="summary_large_image" />
+{{ end }}
+
 {{ define "main" }}
 {{ partial "jumbotron.html" . }}
 {{ with .Content }}
