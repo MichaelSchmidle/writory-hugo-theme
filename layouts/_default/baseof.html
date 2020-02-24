@@ -7,7 +7,7 @@
     {{ with .Site.Params.Description | markdownify | plainify }}
     <meta property="og:description" content="{{ . }}" />{{ end }}
     {{ with .Site.Params.cover }}
-    <meta property="og:image" content="{{ . | relURL }}" />{{ end }}
+    <meta property="og:image" content="{{ . | absURL }}" />{{ end }}
     <meta name="twitter:card" content="summary_large_image" />
     {{ end }}
 </head>
