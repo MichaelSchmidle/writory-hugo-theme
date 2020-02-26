@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/MichaelSchmidle/writory-hugo-theme/blob/master/LICENSE"
 description = "Hugo theme designed to publish books and chapters"
 homepage = "https://writory.org/"
-tags = []
+tags = ["Publishing", "Books", "Minimalist", "Bootstrap", "Monochromatic"]
 features = []
 min_version = "0.65"
 

@@ -9,14 +9,14 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a href="{{ .Site.BaseURL | relURL }}"
-                    class="nav-item nav-link{{ with .IsHome }} active{{ end }}">Home{{ with .IsHome }} <span
-                        class="sr-only">(current)</span>{{ end }}</a>
-                {{ if $bookSection := .Site.GetPage "section" "books" }}<a href="{{ $bookSection.RelPermalink }}"
-                    class="nav-item nav-link{{ if in .RelPermalink $bookSection.RelPermalink }} active{{ end }}">Books</a>{{ end }}
-                <a href="/series"
-                    class="nav-item nav-link{{ if in .RelPermalink "/series/" }} active{{ end }}">Series</a>
-                <a href="/authors"
-                    class="nav-item nav-link{{ if in .RelPermalink "/authors/" }} active{{ end }}">Authors</a>
+                    class="nav-item nav-link{{ if .IsHome }} active{{ end }}">Home{{ if .IsHome }}
+                    <span class="sr-only">(current)</span>{{ end }}</a>
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.head }}
+                <a href="{{ .URL | relURL }}"
+                    class="nav-item nav-link{{ if in $currentPage.Permalink .URL }} active{{ end }}">{{ .Name }}{{ if in $currentPage.Permalink .URL }}
+                    <span class="sr-only">(current)</span>{{ end }}</a>
+                {{ end }}
             </div>
         </div>
     </div>
