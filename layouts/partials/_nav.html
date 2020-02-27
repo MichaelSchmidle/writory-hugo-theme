@@ -12,7 +12,7 @@
                     class="nav-item nav-link{{ if .IsHome }} active{{ end }}">Home{{ if .IsHome }}
                     <span class="sr-only">(current)</span>{{ end }}</a>
                 {{ $currentPage := . }}
-                {{ range .Site.Menus.head }}
+                {{ range .Site.Menus.header | default (dict "1" (dict "URL" "/books/" "Name" "Books") "2" (dict "URL" "/series/" "Name" "Series") "3" (dict "URL" "/authors/" "Name" "Authors")) }}
                 <a href="{{ .URL | relURL }}"
                     class="nav-item nav-link{{ if in $currentPage.Permalink .URL }} active{{ end }}">{{ .Name }}{{ if in $currentPage.Permalink .URL }}
                     <span class="sr-only">(current)</span>{{ end }}</a>
