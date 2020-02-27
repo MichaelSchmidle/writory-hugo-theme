@@ -11,12 +11,14 @@
                 <a href="{{ .Site.BaseURL | relURL }}"
                     class="nav-item nav-link{{ if .IsHome }} active{{ end }}">Home{{ if .IsHome }}
                     <span class="sr-only">(current)</span>{{ end }}</a>
-                {{ $currentPage := . }}
-                {{ range .Site.Menus.header | default (dict "1" (dict "URL" "/books/" "Name" "Books") "2" (dict "URL" "/series/" "Name" "Series") "3" (dict "URL" "/authors/" "Name" "Authors")) }}
-                <a href="{{ .URL | relURL }}"
-                    class="nav-item nav-link{{ if in $currentPage.Permalink .URL }} active{{ end }}">{{ .Name }}{{ if in $currentPage.Permalink .URL }}
-                    <span class="sr-only">(current)</span>{{ end }}</a>
-                {{ end }}
+                {{ if $bookSection := .Site.GetPage "section" "books" }}<a href="{{ $bookSection.RelPermalink }}"
+                    class="nav-item nav-link{{ if in .RelPermalink $bookSection.RelPermalink }} active{{ end }}">{{ $bookSection.Title }}</a>{{ end }}
+                {{ $seriesTaxonomy := .Site.GetPage "taxonomy" "series" }}
+                <a href="{{ $seriesTaxonomy.RelPermalink }}"
+                    class="nav-item nav-link{{ if in .RelPermalink $seriesTaxonomy.RelPermalink }} active{{ end }}">{{ $seriesTaxonomy.Title }}</a>
+                {{ $authorsTaxonomy := .Site.GetPage "taxonomy" "authors" }}
+                <a href="{{ $authorsTaxonomy.RelPermalink }}"
+                    class="nav-item nav-link{{ if in .RelPermalink $authorsTaxonomy.RelPermalink }} active{{ end }}">{{ $authorsTaxonomy.Title }}</a>
             </div>
         </div>
     </div>
