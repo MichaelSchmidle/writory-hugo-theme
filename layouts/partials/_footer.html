@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row mb-5">
-        <div class="col-lg">
+    <div class="row">
+        <div class="col-lg mb-3">
             <p class="mb-0"><small>Copyright ©
                     {{ .Site.LastChange.Format "2006" }}{{ with .Site.Params.authors }}
                     {{ (delimit . ", ") | markdownify }}{{ end }}</small>
@@ -10,11 +10,11 @@
             </p>
         </div>
         {{ if .Site.Params.logogram }}
-        <div class="col-lg-1 align-self-center">
+        <div class="col-lg-1 align-self-center mb-3">
             <p class="mb-0"><img src="/{{ .Site.Params.logogram }}" alt="{{ .Site.Title }}" class="wy-logogram"></p>
         </div>
         {{ end }}
-        <div class="col-lg">
+        <div class="col-lg mb-3">
             {{ with .Site.Params.thirdPartyReferences }}
             {{ range . }}
             <p class="mb-0"><small>{{ . | markdownify }}</small></p>
