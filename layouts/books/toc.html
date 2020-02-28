@@ -17,7 +17,8 @@
         <div class="row align-items-center">
             <div class="col">
                 <h1 class="display-3">{{ .Title }}</h1>
-                {{ with .Params.authors }}<small class="text-muted">By {{ delimit . ", " }}</small>{{ end }}
+                {{ with .Params.authors }}<small class="text-muted">{{ i18n "books.by" }}
+                    {{ delimit . ", " }}</small>{{ end }}
                 {{ with .Summary }}<p>{{ . }}</p>{{ end }}
             </div>
             {{ with .Resources.GetMatch "cover" }}
@@ -41,13 +42,13 @@
             <hr>
             {{ end }}
             {{ if .Pages }}
-            <h6>First Chapter</h6>
+            <h6>{{ i18n "books.first-chapter" }}</h6>
             <div class="shadow card">
                 <div class="card-body">
                     {{ with index (first 1 (.Pages.ByParam "order")) 0 }}
                     <h5 class="card-title">{{ .Title }}</h5>
                     <p class="card-subtitle">{{ .Summary }}</p>
-                    <a href="{{ .RelPermalink }}" class="wy-card-link btn-primary">Read it</a>
+                    <a href="{{ .RelPermalink }}" class="wy-card-link btn-primary">{{ i18n "books.card.button-1" }}</a>
                     {{ else }}
                     {{ partial "story-status.html" (dict "ended" .Params.ended "extended" true) }}
                     {{ end }}
@@ -70,7 +71,7 @@
 <div class="bg-light py-5">
     <div class="container">
         {{ with .Params.series }}
-        <h6>About the Series</h6>
+        <h6>{{ i18n "books.about-series.h" }}</h6>
         <div class="row">
             <div class="col-md-6 col-lg-4">
                 {{ partial "series-card.html" (dict "series" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize)))) }}
@@ -81,7 +82,7 @@
         <hr>
         {{ end }}
         {{ with .Params.authors }}
-        <h6>About the Author{{ if ne (len .) 1 }}s{{ end }}</h6>
+        <h6>{{ i18n "books.about-authors.h" (len .) }}</h6>
         <div class="row">
             {{ range . }}
             <div class="col-md-12 col-lg-6 mb-3">

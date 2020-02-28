@@ -3,9 +3,7 @@
         {{ partial "empty-list.html" }}
     </div>
     <div class="wy-alert-info mt-5" role="alert">
-        <h5>Info</h5>
-        <p>{{ .subject }} hasn't published any books yet. Once done, you'll find a list of {{ .items }}
-            here. Please
-            check back soon!</p>
+        <h5>{{ i18n "unpublished.alert.h-1" }}</h5>
+        <p>{{ . }}<p>
     </div>
 </div>

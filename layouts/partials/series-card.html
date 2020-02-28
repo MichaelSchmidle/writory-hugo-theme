@@ -1,12 +1,14 @@
+{{ if .series.Page.Params.featured }}
+<span class="wy-badge-featured">{{ i18n "series.featured" }}</span>
+{{ end }}
 <div class="shadow card">
     {{ with .series.Page.Resources.GetMatch "cover" }}
     <img src="{{ .RelPermalink }}" alt="" class="card-img-top p-3">
     {{ end }}
     <div class="card-body">
         <h2 class="card-title">{{ .series.Page.Title }}</h2>
-        <p class="card-subtitle text-muted">Series of
-            {{ len .series.Pages }} book{{ if ne (len .series.Pages) 1 }}s{{ end }}</p>
+        <p class="card-subtitle text-muted">{{ i18n "series.of-books" (len .series.Pages) }}</p>
         <a href="{{ .series.Page.RelPermalink }}" role="button"
-            class="wy-card-link btn-{{ if not .primary }}outline-{{ end }}primary">List books</a>
+            class="wy-card-link btn-{{ if not .primary }}outline-{{ end }}primary">{{ i18n "series.card.button-1" }}</a>
     </div>
 </div>

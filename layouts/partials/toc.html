@@ -1,8 +1,8 @@
 {{ $active := .active }}
-<h6>Table of Contents</h6>
+<h6>{{ i18n "books.toc" }}</h6>
 <div class="list-group">
     <a href="{{ .book.RelPermalink }}"
-        class="list-group-item list-group-item-action{{ if eq .book $active }} active{{ end }}">Index</a>
+        class="list-group-item list-group-item-action{{ if eq .book $active }} active{{ end }}">{{ i18n "books.index" }}</a>
     {{ range .book.Pages.ByParam "order" }}
     <a href="{{ .RelPermalink }}"
         class="list-group-item list-group-item-action{{ if eq . $active }} active{{ end }}">{{ .Title }}</a>

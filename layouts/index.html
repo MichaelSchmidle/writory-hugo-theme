@@ -1,12 +1,13 @@
 {{ define "main" }}
 <div class="wy-jumbotron-home">
     <div class="container">
-        <h1>{{ if .Site.Params.logo }}<img src="{{ .Site.Params.logo }}"
+        <h1>{{ if .Site.Params.logo }}<img src="{{ .Site.Params.logo | relURL }}"
                 alt="{{ .Site.Title }}">{{ else }}{{ .Site.Title }}{{ end }}</h1>
         <p>{{ .Site.Params.description | markdownify }}</p>
     </div>
 </div>
-{{ if $bookSection := .Site.GetPage "section" "books" }}
+{{ $bookSection := .Site.GetPage "section" "books" }}
+{{ if $bookSection.Pages }}
 <div class="container py-5">
     <div class="row">
         <div class="col-md-4 text-center">
@@ -18,9 +19,8 @@
             {{ if .Content }}
             {{ .Content }}
             {{ else }}
-            <h1>Hi, It’s a Pleasure to Meet You</h1>
-            <p>This is the place where we, the authors, publish our stories. You can read more<a href="/authors/">about
-                    us</a> or dive right into our <a href="/books/">books</a>!</p>
+            <h1>{{ i18n "home.h-1" }}</h1>
+            <p>{{ i18n "home.p-1" | markdownify }}</p>
             {{ end }}
         </div>
     </div>
@@ -33,7 +33,6 @@
         <div class="row">
             {{ if $books.Pages }}
             <div class="col-md-6 col-lg-4 offset-lg-1">
-                <h6>Featured Book</h6>
                 {{ range first 1 ($books.Pages.ByParam "featured")}}
                 {{ partial "book-card.html" (dict "book" . "primary" true) }}
                 {{ end }}
@@ -44,7 +43,6 @@
             {{ end }}
             {{ if $series.Pages }}
             <div class="col-md-6 col-lg-4 offset-lg-2">
-                <h6>Featured Series</h6>
                 {{ range first 1 ($series.Pages.ByParam "featured") }}
                 {{ partial "series-card.html" (dict "series" . "primary" true) }}
                 {{ end }}
@@ -55,6 +53,6 @@
 </div>
 {{ end }}
 {{ else }}
-{{ partial "unpublished.html" (dict "subject" "This site" "items" "featured content") }}
+{{ partial "unpublished.html" (i18n "home.unpublished.alert.p-1") }}
 {{ end }}
 {{ end }}

@@ -3,8 +3,7 @@
         {{ partial "empty-list.html" }}
     </div>
     <div class="wy-alert-info mt-5" role="alert">
-        <h5>Info</h5>
-        <p>It appears that the books on this site aren't referencing {{ .unreferenced }} yet. Once done,
-            you'll find a list of {{ .items }} here. Please check back soon!</p>
+        <h5>{{ i18n "unreferenced.alert.h-1" }}</h5>
+        <p>{{ . }}</p>
     </div>
 </div>

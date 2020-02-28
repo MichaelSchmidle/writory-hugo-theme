@@ -4782,7 +4782,7 @@ input[type=button].btn-block {
   border-bottom-right-radius: 0.2rem;
 }
 
-.badge, .wy-badge-warning, .wy-badge-success {
+.badge, .wy-badge-featured, .wy-badge-warning, .wy-badge-success {
   display: inline-block;
   padding: 0.25em 0.4em;
   font-size: 75%;
@@ -4795,19 +4795,19 @@ input[type=button].btn-block {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .badge, .wy-badge-warning, .wy-badge-success {
+  .badge, .wy-badge-featured, .wy-badge-warning, .wy-badge-success {
     transition: none;
   }
 }
-a.badge:hover, a.wy-badge-warning:hover, a.wy-badge-success:hover, a.badge:focus, a.wy-badge-warning:focus, a.wy-badge-success:focus {
+a.badge:hover, a.wy-badge-featured:hover, a.wy-badge-warning:hover, a.wy-badge-success:hover, a.badge:focus, a.wy-badge-featured:focus, a.wy-badge-warning:focus, a.wy-badge-success:focus {
   text-decoration: none;
 }
 
-.badge:empty, .wy-badge-warning:empty, .wy-badge-success:empty {
+.badge:empty, .wy-badge-featured:empty, .wy-badge-warning:empty, .wy-badge-success:empty {
   display: none;
 }
 
-.btn .badge, .btn .wy-badge-warning, .btn .wy-badge-success, .wy-card-link .badge, .wy-card-link .wy-badge-warning, .wy-card-link .wy-badge-success {
+.btn .badge, .btn .wy-badge-featured, .btn .wy-badge-warning, .btn .wy-badge-success, .wy-card-link .badge, .wy-card-link .wy-badge-featured, .wy-card-link .wy-badge-warning, .wy-card-link .wy-badge-success {
   position: relative;
   top: -1px;
 }
@@ -4831,15 +4831,15 @@ a.badge-primary:focus, a.badge-primary.focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 96, 177, 0.5);
 }
 
-.badge-secondary {
+.badge-secondary, .wy-badge-featured {
   color: #e8eaed;
   background-color: #404a52;
 }
-a.badge-secondary:hover, a.badge-secondary:focus {
+a.badge-secondary:hover, a.wy-badge-featured:hover, a.badge-secondary:focus, a.wy-badge-featured:focus {
   color: #e8eaed;
   background-color: #2a3035;
 }
-a.badge-secondary:focus, a.badge-secondary.focus {
+a.badge-secondary:focus, a.wy-badge-featured:focus, a.badge-secondary.focus, a.focus.wy-badge-featured {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(64, 74, 82, 0.5);
 }
@@ -6325,7 +6325,7 @@ button.wy-nav-bar:focus {
   border-color: #0060b1 !important;
 }
 
-.border-secondary, .wy-blockquote, .wy-alert-secondary {
+.border-secondary, .wy-blockquote, .wy-alert-secondary, .wy-nav-bar hr {
   border-color: #404a52 !important;
 }
 
@@ -7433,7 +7433,7 @@ button.wy-nav-bar:focus {
   position: relative !important;
 }
 
-.position-absolute {
+.position-absolute, .wy-badge-featured {
   position: absolute !important;
 }
 
@@ -7661,7 +7661,8 @@ button.wy-nav-bar:focus {
 }
 
 .mt-3, .wy-card-link,
-.my-3 {
+.my-3,
+.wy-nav-bar hr {
   margin-top: 1rem !important;
 }
 
@@ -7671,7 +7672,8 @@ button.wy-nav-bar:focus {
 }
 
 .mb-3, .wy-content h1, .wy-content h2, .wy-content h3, .wy-content h4, .wy-content h5, .wy-content h6, .wy-alert-primary h1, .wy-alert-primary h2, .wy-alert-primary h3, .wy-alert-primary h4, .wy-alert-primary h5, .wy-alert-primary h6, .wy-alert-secondary h1, .wy-alert-secondary h2, .wy-alert-secondary h3, .wy-alert-secondary h4, .wy-alert-secondary h5, .wy-alert-secondary h6, .wy-alert-success h1, .wy-alert-success h2, .wy-alert-success h3, .wy-alert-success h4, .wy-alert-success h5, .wy-alert-success h6, .wy-alert-danger h1, .wy-alert-danger h2, .wy-alert-danger h3, .wy-alert-danger h4, .wy-alert-danger h5, .wy-alert-danger h6, .wy-alert-warning h1, .wy-alert-warning h2, .wy-alert-warning h3, .wy-alert-warning h4, .wy-alert-warning h5, .wy-alert-warning h6, .wy-alert-info h1, .wy-alert-info h2, .wy-alert-info h3, .wy-alert-info h4, .wy-alert-info h5, .wy-alert-info h6, .wy-alert-light h1, .wy-alert-light h2, .wy-alert-light h3, .wy-alert-light h4, .wy-alert-light h5, .wy-alert-light h6, .wy-alert-dark h1, .wy-alert-dark h2, .wy-alert-dark h3, .wy-alert-dark h4, .wy-alert-dark h5, .wy-alert-dark h6,
-.my-3 {
+.my-3,
+.wy-nav-bar hr {
   margin-bottom: 1rem !important;
 }
 
@@ -10071,7 +10073,7 @@ h3 {
     display: none;
   }
 
-  .badge, .wy-badge-warning, .wy-badge-success {
+  .badge, .wy-badge-featured, .wy-badge-warning, .wy-badge-success {
     border: 1px solid #0a0b0c;
   }
 
@@ -10143,4 +10145,10 @@ h1, h2, h3, h4, h5, h6 {
 .wy-status-bar a:hover {
   color: #a6b1ba;
   text-decoration: none;
+}
+
+.wy-badge-featured {
+  left: -0.1rem;
+  top: 1rem;
+  z-index: 100;
 }

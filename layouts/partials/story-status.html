@@ -1,6 +1,6 @@
-This story
 {{ if .ended }}
-has <span class="wy-badge-warning">ended</span>{{ if .extended }} · Read the complete story below{{ end }}
+{{ i18n "books.status.ended" | safeHTML }}{{ if .extended }} · {{ i18n "books.status.ended.extended" }}{{ end }}
 {{ else }}
-is <span class="wy-badge-success">developing</span>{{ if .extended }} · More chapters will follow{{ end }}
+{{ i18n "books.status.developing" | safeHTML }}{{ if .extended }} ·
+{{ i18n "books.status.developing.extended" }}{{ end }}
 {{ end }}

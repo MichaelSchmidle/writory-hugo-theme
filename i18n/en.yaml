@@ -1,0 +1,96 @@
+- id: nav.home
+  translation: Home
+
+- id: footer.p-1
+  translation: All rights reserved
+- id: footer.p-2
+  translation: Mirage illustrations licensed by [Icons8 LLC.](https://icons8.com/)
+- id: footer.p-3
+  translation: Made with [Hugo](https://gohugo.io/) and [Writory](https://writory.org/)
+
+- id: unpublished.alert.h-1
+  translation: Info
+- id: home.unpublished.alert.p-1
+  translation: This site hasn't published any books yet. Once done, you'll find a list of featured content here. Please check back soon!
+- id: books.unpublished.alert.p-1
+  translation: This site hasn't published any books yet. Once done, you'll find a list of books here. Please check back soon!
+- id: series.unpublished.alert.p-1
+  translation: This site hasn't published any books yet. Once done, you'll find a list of series here. Please check back soon!
+- id: authors.unpublished.alert.p-1
+  translation: This site hasn't published any books yet. Once done, you'll find a list of authors here. Please check back soon!
+
+- id: 404.alert.h-1
+  translation: Error
+- id: 404.alert.p-1
+  translation: The page you requested doesn't exist. Please refer to the books, series, and authors pages to find a list of available content on this site.
+- id: 404.alert.p-2
+  translation: The page you requested doesn't exist. This is most likely due to the fact that this site hasn't published any books yet. Please check back soon!
+
+- id: unreferenced.alert.h-1
+  translation: Info
+- id: series.unreferenced.alert.p-1
+  translation: It appears that the books on this site aren't referencing any series yet. Once done, you'll find a list of series here. Please check back soon!
+- id: series.unreferenced.alert.p-2
+  translation: It appears that the books on this site aren't referencing this series yet. Once done, you'll find a list of books here. Please check back soon!
+- id: authors.unreferenced.alert.p-1
+  translation: It appears that the books on this site aren't referencing any authors yet. Once done, you'll find a list of authors here. Please check back soon!
+- id: authors.unreferenced.alert.p-2
+  translation: It appears that the books on this site aren't referencing this author yet. Once done, you'll find a list of books here. Please check back soon!
+
+- id: home.h-1
+  translation: Hi, It’s a Pleasure to Meet You!
+- id: home.p-1
+  translation: This is the place where we publish our stories. You can read more [about us](/en/authors/) or dive right into our [books](/en/books/)!
+
+- id: books.featured
+  translation: featured
+- id: books.by
+  translation: by
+- id: books.card.button-1
+  translation: Start reading
+- id: books.status.ended
+  translation: This story has <span class="wy-badge-warning">ended</span>
+- id: books.status.ended.extended
+  translation: Read the complete story below
+- id : books.status.developing
+  translation: This story is <span class="wy-badge-success">developing</span>
+- id: books.status.developing.extended
+  translation: More chapters will follow
+- id: books.toc
+  translation: Table of Contents
+- id: books.index
+  translation: Title page
+- id: books.first-chapter
+  translation: First Chapter
+- id: books.about-series.h
+  translation: About the Series
+- id: books.about-authors.h
+  translation:
+    other: About the Authors
+    one: About the Author
+- id: books.chapter-x-of-y
+  translation: Chapter {{ .x }} of {{ .y }}
+- id: books.next-chapter.h
+  translation: Next Chapter
+
+- id: series.featured
+  translation: featured
+- id: series.of-books
+  translation:
+    other: Series of {{ .Count }} books
+    one: Series of one book
+- id: series.card.button-1
+  translation: List books
+
+- id: authors.of-books
+  translation:
+    other: Author of {{ .Count }} books
+    one: Author of one book
+- id: authors.of-books.name
+  translation: "{{ .name }} is author of {{ .books }}"
+- id: books.of-books
+  translation:
+    other: "{{ .Count }} books"
+    one: one book
+- id: authors.card.button-1
+  translation: List books

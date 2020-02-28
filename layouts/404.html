@@ -5,11 +5,10 @@
         <img src="/mirage-page-not-found.png" alt="" height="256">
     </div>
     <div class="wy-alert-warning mt-5" role="alert">
-        <h5>Error</h5>
-        <p>The page you requested doesn't exist.
-            {{ if $bookSection := .Site.GetPage "section" "books" }}Please refer to the books, series, and authors pages
-            to find a list of available content on this site.{{ else }}This is most likely due to the fact that this
-            site hasn't published any books yet. Please check back soon!{{ end }}</p>
+        <h5>{{ i18n "404.alert.h-1" }}</h5>
+        {{ $bookSection := .Site.GetPage "section" "books" }}
+        <p>{{ if $bookSection.Pages }}{{ i18n "404.alert.p-1" }}{{ else }}{{ i18n "404.alert.p-2" }}{{ end }}
+        </p>
     </div>
 </div>
 {{ end }}

@@ -19,14 +19,12 @@
     <div class="row">
         {{ range (.Pages.ByParam "featured") }}
         <div class="col-md-6 col-lg-4 mb-3">
-            {{/* In the following, .Parent is required since authors on branch bundles doesn't work yet.
-            See https://discourse.gohugo.io/t/how-to-represent-books-with-chapters-in-hugo/23050 */}}
             {{ partial "book-card.html" (dict "book" . "primary" true) }}
         </div>
         {{ end }}
     </div>
 </div>
 {{ else }}
-{{ if $bookSection := .Site.GetPage "section" "books" }}{{ partial "unreferenced.html" (dict "unreferenced" (print .Title " as author") "items" "books") }}{{ else }}{{ partial "unpublished.html" (dict "subject" .Title "items" "books") }}{{ end }}
+{{ if $bookSection := .Site.GetPage "section" "books" }}{{ partial "unreferenced.html" (i18n "series.unreferenced.alert.p-2") }}{{ else }}{{ partial "unpublished.html" (i18n "series.unpublished.alert.p-1") }}{{ end }}
 {{ end }}
 {{ end }}

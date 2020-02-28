@@ -6,12 +6,11 @@
                 width=64>{{ end }}
             <div class="media-body">
                 <h2 class="card-title">{{ .author.Page.Title }}</h2>
-                <p class="card-subtitle text-muted">Author of {{ len .author.Pages }}
-                    book{{ if ne (len .author.Pages) 1 }}s{{ end }}
+                <p class="card-subtitle text-muted">{{ i18n "authors.of-books" (len .author.Pages) }}
                 </p>
                 {{ with .author.Page.Summary }}<p class="mt-3 mb-0">{{ . }}</p>{{ end }}
                 <a href="{{ .author.Page.RelPermalink }}" role="button"
-                    class="wy-card-link btn-{{ if not .primary }}outline-{{ end }}primary">List books</a>
+                    class="wy-card-link btn-{{ if not .primary }}outline-{{ end }}primary">{{ i18n "authors.card.button-1" }}</a>
             </div>
         </div>
     </div>

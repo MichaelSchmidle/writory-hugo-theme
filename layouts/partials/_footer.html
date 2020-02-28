@@ -1,15 +1,17 @@
 <div class="container">
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-lg">
             <p class="mb-0"><small>Copyright ©
-                    {{ .Site.LastChange.Format "2006" }}{{ with .Site.Params.authors }} by
-                    {{ (delimit . ", ") | markdownify }}{{ end }}</small></p>
-            <p><small>{{ with .Site.Copyright }}{{ . | markdownify }}{{ else }}All rights
-                    reserved{{ end }}</small></p>
+                    {{ .Site.LastChange.Format "2006" }}{{ with .Site.Params.authors }}
+                    {{ (delimit . ", ") | markdownify }}{{ end }}</small>
+            </p>
+            <p class="mb-0">
+                <small>{{ with .Site.Copyright }}{{ . | markdownify }}{{ else }}{{ i18n "footer.p-1" }}{{ end }}</small>
+            </p>
         </div>
         {{ if .Site.Params.logogram }}
-        <div class="col-lg-1">
-            <p><img src="/{{ .Site.Params.logogram }}" alt="{{ .Site.Title }}" class="wy-logogram"></p>
+        <div class="col-lg-1 align-self-center">
+            <p class="mb-0"><img src="/{{ .Site.Params.logogram }}" alt="{{ .Site.Title }}" class="wy-logogram"></p>
         </div>
         {{ end }}
         <div class="col-lg">
@@ -18,10 +20,8 @@
             <p class="mb-0"><small>{{ . | markdownify }}</small></p>
             {{ end }}
             {{ else }}
-            <p class="mb-0"><small>Mirage illustrations licensed by <a href="https://icons8.com/">Icons8
-                        LLC.</a></small></p>
-            <p><small>Made with <a href="https://gohugo.io/">Hugo</a> and <a
-                        href="https://writory.org/">Writory</a></small></p>
+            <p class="mb-0"><small>{{ i18n "footer.p-2" | markdownify }}</small></p>
+            <p class="mb-0"><small>{{ i18n "footer.p-3" | markdownify }}</small></p>
             {{ end }}
         </div>
     </div>

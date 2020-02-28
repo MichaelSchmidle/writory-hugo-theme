@@ -1,0 +1,96 @@
+- id: nav.home
+  translation: Start
+
+- id: footer.p-1
+  translation: Alle Rechte vorbehalten
+- id: footer.p-2
+  translation: Mirage Illustrationen lizenziert von [Icons8 LLC.](https://icons8.com/)
+- id: footer.p-3
+  translation: Gemacht mit [Hugo](https://gohugo.io/) und [Writory](https://writory.org/)
+
+- id: unpublished.alert.h-1
+  translation: Info
+- id: home.unpublished.alert.p-1
+  translation: Diese Site hat noch keine Bücher veröffentlicht. Sobald geschehen, findest Du hier eine Liste an ausgewählten Inhalten. Bitte schau bald wieder vorbei!
+- id: books.unpublished.alert.p-1
+  translation: Diese Site hat noch keine Bücher veröffentlicht. Sobald geschehen, findest Du hier eine Liste von Büchern. Bitte schau bald wieder vorbei!
+- id: series.unpublished.alert.p-1
+  translation: Diese Site hat noch keine Bücher veröffentlicht. Sobald geschehen, findest Du hier eine Liste von Serien. Bitte schau bald wieder vorbei!
+- id: authors.unpublished.alert.p-1
+  translation: Diese Site hat noch keine Bücher veröffentlicht. Sobald geschehen, findest Du hier eine Liste von Autoren. Bitte schau bald wieder vorbei!
+
+- id: 404.alert.h-1
+  translation: Fehler
+- id: 404.alert.p-1
+  translation: Die angefragte Seite existiert nicht. Bitte prüfe die Bücher-, Serien- und Autoren-Seiten, um eine Liste von verfügbaren Inhalten auf dieser Site zu erhalten.
+- id: 404.alert.p-2
+  translation: Die angefragte Seite existiert nicht. Dies liegt höchstwahrscheinlich daran, dass die Site noch keine Bücher veröffentlicht hat. Bitte schau bald wieder vorbei!
+
+- id: unreferenced.alert.h-1
+  translation: Info
+- id: series.unreferenced.alert.p-1
+  translation: Es scheint, dass die Bücher auf dieser Site noch auf keine Serie verweisen. Sobald geschehen, findest Du hier eine Liste von Serien. Bitte schau bald wieder vorbei!
+- id: series.unreferenced.alert.p-2
+  translation: Es scheint, dass die Bücher auf dieser Site noch nicht auf diese Serie verweisen. Sobald geschehen, findest Du hier eine Liste von Büchern. Bitte schau bald wieder vorbei!
+- id: authors.unreferenced.alert.p-1
+  translation: Es scheint, dass die Bücher auf dieser Site noch auf keine Autoren verweisen. Sobald geschehen, findest Du hier eine Liste von Autoren. Bitte schau bald wieder vorbei!
+- id: authors.unreferenced.alert.p-2
+  translation: Es scheint, dass die Bücher auf dieser Site noch nicht auf diesen Autor verweisen. Sobald geschehen, findest Du hier eine Liste von Büchern. Bitte schau bald wieder vorbei!
+
+- id: home.h-1
+  translation: Hallo, es ist eine Freude, Dich zu sehen!
+- id: home.p-1
+  translation: Dies ist der Ort, wo wir unsere Geschichten veröffentlichen. Du kannst mehr [über uns](/de/autoren/) erfahren oder direkt in unsere [Bücher](/de/bücher/) eintauchen!
+
+- id: books.featured
+  translation: ausgewählt
+- id: books.by
+  translation: von
+- id: books.card.button-1
+  translation: Jetzt lesen
+- id: books.status.ended
+  translation: Diese Geschichte ist <span class="wy-badge-warning">zu Ende</span>
+- id: books.status.ended.extended
+  translation: Lies die ganze Geschichte unten
+- id : books.status.developing
+  translation: Diese Geschichte <span class="wy-badge-success">entwickelt sich</span>
+- id: books.status.developing.extended
+  translation: Weitere Kapitel folgen
+- id: books.toc
+  translation: Inhaltsverzeichnis
+- id: books.index
+  translation: Titelseite
+- id: books.first-chapter
+  translation: Erstes Kapitel
+- id: books.about-series.h
+  translation: Über die Serie
+- id: books.about-authors.h
+  translation:
+    other: Über die Autoren
+    one: Über den Autor
+- id: books.chapter-x-of-y
+  translation: Kapitel {{ .x }} von {{ .y }}
+- id: books.next-chapter.h
+  translation: Nächstes Kapitel
+
+- id: series.featured
+  translation: ausgewählt
+- id: series.of-books
+  translation:
+    other: Serie von {{ .Count }} Büchern
+    one: Serie von einem Buch
+- id: series.card.button-1
+  translation: Bücher auflisten
+
+- id: authors.of-books
+  translation:
+    other: Autor von {{ .Count }} Büchern
+    one: Autor von einem Buch
+- id: authors.of-books.name
+  translation: "{{ .name }} ist Autor von {{ .books }}"
+- id: books.of-books
+  translation:
+    other: "{{ .Count }} Büchern"
+    one: einem Buch
+- id: authors.card.button-1
+  translation: Bücher auflisten

@@ -16,6 +16,7 @@
     </div>
 </div>
 {{ else }}
-{{ if $bookSection := .Site.GetPage "section" "books" }}{{ partial "unreferenced.html" (dict "unreferenced" "any authors" "list" "authors") }}{{ else }}{{ partial "unpublished.html" (dict "subject" "This site" "items" "authors") }}{{ end }}
+{{ $bookSection := .Site.GetPage "section" "books" }}
+{{ if $bookSection.Pages }}{{ partial "unreferenced.html" (i18n "authors.unreferenced.alert.p-1") }}{{ else }}{{ partial "unpublished.html" (i18n "authors.unpublished.alert.p-1") }}{{ end }}
 {{ end }}
 {{ end }}

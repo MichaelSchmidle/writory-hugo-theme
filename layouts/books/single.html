@@ -9,9 +9,8 @@
 {{ define "main" }}
 <div class="wy-status-bar">
     <div>
-        <span class="text-white-50"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> ·</span> Chapter
-        {{ .Params.order }} of
-        {{ len .Parent.Pages }}
+        <span class="text-white-50"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> ·</span>
+        {{ i18n "books.chapter-x-of-y" (dict "x" .Params.order "y" (len .Parent.Pages)) }}
     </div>
 </div>
 {{ partial "jumbotron" . }}
@@ -22,14 +21,14 @@
                 {{ .Content }}
             </div>
             <hr>
-            <h6>Next Chapter</h6>
+            <h6>{{ i18n "books.next-chapter.h" }}</h6>
             <div class="shadow card">
                 <div class="card-body">
                     {{ $book := .Parent.Pages.ByParam "order" }}
                     {{ with $book.Prev . }}
                     <h5 class="card-title">{{ .Title }}</h5>
                     <p class="card-subtitle">{{ .Summary }}</p>
-                    <a href="{{ .RelPermalink }}" class="wy-card-link btn-primary">Read it</a>
+                    <a href="{{ .RelPermalink }}" class="wy-card-link btn-primary">{{ i18n "books.card.button-1" }}</a>
                     {{ else }}
                     {{ partial "story-status.html" (dict "ended" .Parent.Params.ended "extended" true) }}
                     {{ end }}
