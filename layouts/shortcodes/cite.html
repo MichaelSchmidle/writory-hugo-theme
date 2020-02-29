@@ -1,5 +1,5 @@
 {{ if .Inner }}
 <footer>
-    <cite>{{ .Inner | markdownify }}</cite>{{ with .Get "adapted" }} (adapted){{ end }}
+    <cite>{{ .Inner | markdownify }}</cite>{{ with .Get "adapted" }} ({{ i18n "cite.adapted" }}){{ end }}
 </footer>
 {{ end }}

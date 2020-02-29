@@ -94,3 +94,6 @@
     one: one book
 - id: authors.card.button-1
   translation: List books
+
+- id: cite.adapted
+  translation: adapted

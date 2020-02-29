@@ -94,3 +94,6 @@
     one: einem Buch
 - id: authors.card.button-1
   translation: Bücher auflisten
+
+- id: cite.adapted
+  translation: angepasst
