@@ -48,7 +48,7 @@
         <h6>{{ i18n "books.about-series.h" }}</h6>
         <div class="row">
             <div class="col-md-6 col-lg-4">
-                {{ partial "series-card.html" (dict "series" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize)))) }}
+                {{ partial "series-card.html" (dict "series" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize))) "primary" true) }}
             </div>
         </div>
         {{ end }}
@@ -60,7 +60,7 @@
         <div class="row">
             {{ range . }}
             <div class="col-md-12 col-lg-6 mb-3">
-                {{ partial "author-card.html" (dict "author" ($.Site.GetPage (printf "/%s/%s" "authors" (. | urlize)))) }}
+                {{ partial "author-card.html" (dict "author" ($.Site.GetPage (printf "/%s/%s" "authors" (. | urlize))) "primary" true) }}
             </div>
             {{ end }}
         </div>
