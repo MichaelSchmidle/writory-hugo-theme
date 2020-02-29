@@ -45,9 +45,9 @@
 <div class="bg-light py-5">
     <div class="container">
         {{ with .Parent.Params.series }}
+        <h6>{{ i18n "books.about-series.h" }}</h6>
         <div class="row">
             <div class="col-md-6 col-lg-4">
-                <h6>{{ i18n "books.about-series.h" }}</h6>
                 {{ partial "series-card.html" (dict "series" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize)))) }}
             </div>
         </div>
@@ -56,10 +56,10 @@
         <hr>
         {{ end }}
         {{ with .Parent.Params.authors }}
+        <h6>{{ i18n "books.about-authors.h" (len .) }}</h6>
         <div class="row">
             {{ range . }}
             <div class="col-md-12 col-lg-6 mb-3">
-                <h6>{{ i18n "books.about-authors.h" (len .) }}</h6>
                 {{ partial "author-card.html" (dict "author" ($.Site.GetPage (printf "/%s/%s" "authors" (. | urlize)))) }}
             </div>
             {{ end }}
