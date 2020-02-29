@@ -58,8 +58,8 @@
   translation: More chapters will follow
 - id: books.toc
   translation: Table of Contents
-- id: books.index
-  translation: Title page
+- id: books.index.h
+  translation: Title Page
 - id: books.first-chapter
   translation: First Chapter
 - id: books.about-series.h

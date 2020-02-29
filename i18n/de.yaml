@@ -58,7 +58,7 @@
   translation: Weitere Kapitel folgen
 - id: books.toc
   translation: Inhaltsverzeichnis
-- id: books.index
+- id: books.index.h
   translation: Titelseite
 - id: books.first-chapter
   translation: Erstes Kapitel
