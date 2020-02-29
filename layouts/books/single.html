@@ -14,6 +14,8 @@
     </div>
 </div>
 {{ partial "jumbotron" . }}
+{{ partial "toc-nav.html" (dict "book" .Parent "active" . ) }}
+{{ $chapters := .Parent.Pages.ByParam "order" }}
 <div class="container py-5">
     <div class="row">
         <div class="col-lg-8">
@@ -24,8 +26,7 @@
             <h6>{{ i18n "books.next-chapter.h" }}</h6>
             <div class="shadow card">
                 <div class="card-body">
-                    {{ $book := .Parent.Pages.ByParam "order" }}
-                    {{ with $book.Prev . }}
+                    {{ with $chapters.Prev . }}
                     <h5 class="card-title">{{ .Title }}</h5>
                     <p class="card-subtitle">{{ .Summary }}</p>
                     <a href="{{ .RelPermalink }}" class="wy-card-link btn-primary">{{ i18n "books.card.button-1" }}</a>
@@ -35,14 +36,36 @@
                 </div>
             </div>
         </div>
-        {{ if and .Content .Parent.Pages }}
-        <div class="col-lg d-lg-none">
-            <hr>
-        </div>
-        {{ end }}
-        <div class="col">
-            {{ partial "toc.html" (dict "book" .Parent "active" . ) }}
+        <div class="col d-none d-lg-block">
+            {{ partial "toc-list.html" (dict "book" .Parent "active" . ) }}
         </div>
     </div>
 </div>
+{{ if and (not ($chapters.Prev .)) (or .Parent.Params.series .Parent.Params.authors) }}
+<div class="bg-light py-5">
+    <div class="container">
+        {{ with .Parent.Params.series }}
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <h6>{{ i18n "books.about-series.h" }}</h6>
+                {{ partial "series-card.html" (dict "series" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize)))) }}
+            </div>
+        </div>
+        {{ end }}
+        {{ if and .Parent.Params.series .Parent.Params.authors }}
+        <hr>
+        {{ end }}
+        {{ with .Parent.Params.authors }}
+        <div class="row">
+            {{ range . }}
+            <div class="col-md-12 col-lg-6 mb-3">
+                <h6>{{ i18n "books.about-authors.h" (len .) }}</h6>
+                {{ partial "author-card.html" (dict "author" ($.Site.GetPage (printf "/%s/%s" "authors" (. | urlize)))) }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
 {{ end }}

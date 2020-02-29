@@ -1,7 +1,7 @@
-{{ if .book.Params.featured }}
-<span class="wy-badge-featured">{{ i18n "books.featured" }}</span>
-{{ end }}
 <div class="shadow card">
+    {{ if .book.Params.featured }}
+    <span class="wy-badge-featured">{{ i18n "books.featured" }}</span>
+    {{ end }}
     {{ with .book.Resources.GetMatch "cover" }}
     <img src="{{ .RelPermalink }}" alt="" class="card-img-top p-3">
     {{ end }}

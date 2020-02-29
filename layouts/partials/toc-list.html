@@ -1,6 +1,6 @@
 {{ $active := .active }}
 <h6>{{ i18n "books.toc" }}</h6>
-<div class="list-group">
+<div class="shadow list-group">
     <a href="{{ .book.RelPermalink }}"
         class="list-group-item list-group-item-action{{ if eq .book $active }} active{{ end }}">{{ i18n "books.index.h" }}</a>
     {{ range .book.Pages.ByParam "order" }}
@@ -9,6 +9,6 @@
     {{ end }}
 </div>
 {{ if not .book.Params.ended }}
-<p class="text-muted mt-3">
+<p class="text-muted mt-3 mb-0">
     {{ partial "story-status.html" (dict "ended" .book.Params.ended "extended" true) }}</p>
 {{ end }}

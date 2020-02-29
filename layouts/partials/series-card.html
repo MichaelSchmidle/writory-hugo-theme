@@ -1,7 +1,7 @@
-{{ if .series.Page.Params.featured }}
-<span class="wy-badge-featured">{{ i18n "series.featured" }}</span>
-{{ end }}
 <div class="shadow card">
+    {{ if .series.Page.Params.featured }}
+    <span class="wy-badge-featured">{{ i18n "series.featured" }}</span>
+    {{ end }}
     {{ with .series.Page.Resources.GetMatch "cover" }}
     <img src="{{ .RelPermalink }}" alt="" class="card-img-top p-3">
     {{ end }}
