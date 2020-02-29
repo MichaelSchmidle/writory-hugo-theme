@@ -7548,7 +7548,7 @@ button.wy-nav-bar:focus {
   height: auto !important;
 }
 
-.mw-100 {
+.mw-100, .wy-jumbotron-home h1 img {
   max-width: 100% !important;
 }
 
