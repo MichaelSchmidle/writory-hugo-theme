@@ -459,13 +459,13 @@ h6, .h6 {
   }
 }
 
-.display-4 {
+.display-4, blockquote {
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
 }
 @media (max-width: 1200px) {
-  .display-4 {
+  .display-4, blockquote {
     font-size: calc(1.475rem + 2.7vw);
   }
 }
@@ -511,12 +511,12 @@ mark,
   text-transform: uppercase;
 }
 
-.blockquote, .wy-blockquote {
+.blockquote, blockquote {
   margin-bottom: 1rem;
   font-size: 1.40625rem;
 }
 @media (max-width: 1200px) {
-  .blockquote, .wy-blockquote {
+  .blockquote, blockquote {
     font-size: calc(1.265625rem + 0.1875vw);
   }
 }
@@ -6255,16 +6255,14 @@ button.bg-danger:focus {
   background-color: #ca3b00 !important;
 }
 
-.bg-light, .wy-blockquote, .wy-jumbotron {
+.bg-light, .wy-jumbotron {
   background-color: #c7ced3 !important;
 }
 
-a.bg-light:hover, a.wy-blockquote:hover, a.wy-jumbotron:hover, a.bg-light:focus, a.wy-blockquote:focus, a.wy-jumbotron:focus,
+a.bg-light:hover, a.wy-jumbotron:hover, a.bg-light:focus, a.wy-jumbotron:focus,
 button.bg-light:hover,
-button.wy-blockquote:hover,
 button.wy-jumbotron:hover,
 button.bg-light:focus,
-button.wy-blockquote:focus,
 button.wy-jumbotron:focus {
   background-color: #aab4bd !important;
 }
@@ -6305,7 +6303,7 @@ button.wy-nav-bar:focus {
   border-bottom: 1px solid #8594a0 !important;
 }
 
-.border-left, .wy-blockquote {
+.border-left, blockquote {
   border-left: 1px solid #8594a0 !important;
 }
 
@@ -6333,7 +6331,7 @@ button.wy-nav-bar:focus {
   border-color: #0060b1 !important;
 }
 
-.border-secondary, .wy-blockquote, .wy-alert-secondary, .wy-nav-bar hr {
+.border-secondary, .wy-alert-secondary, .wy-nav-bar hr {
   border-color: #404a52 !important;
 }
 
@@ -6353,7 +6351,7 @@ button.wy-nav-bar:focus {
   border-color: #fd4a00 !important;
 }
 
-.border-light, .wy-alert-light {
+.border-light, .wy-alert-light, blockquote {
   border-color: #c7ced3 !important;
 }
 
@@ -7524,7 +7522,7 @@ button.wy-nav-bar:focus {
   width: 50% !important;
 }
 
-.w-75 {
+.w-75, blockquote {
   width: 75% !important;
 }
 
@@ -7720,6 +7718,7 @@ button.wy-nav-bar:focus {
 
 .mt-5, .wy-content h1, .wy-content h2, .wy-content h3, .wy-content h4, .wy-content h5, .wy-content h6, .wy-alert-primary h1, .wy-alert-primary h2, .wy-alert-primary h3, .wy-alert-primary h4, .wy-alert-primary h5, .wy-alert-primary h6, .wy-alert-secondary h1, .wy-alert-secondary h2, .wy-alert-secondary h3, .wy-alert-secondary h4, .wy-alert-secondary h5, .wy-alert-secondary h6, .wy-alert-success h1, .wy-alert-success h2, .wy-alert-success h3, .wy-alert-success h4, .wy-alert-success h5, .wy-alert-success h6, .wy-alert-danger h1, .wy-alert-danger h2, .wy-alert-danger h3, .wy-alert-danger h4, .wy-alert-danger h5, .wy-alert-danger h6, .wy-alert-warning h1, .wy-alert-warning h2, .wy-alert-warning h3, .wy-alert-warning h4, .wy-alert-warning h5, .wy-alert-warning h6, .wy-alert-info h1, .wy-alert-info h2, .wy-alert-info h3, .wy-alert-info h4, .wy-alert-info h5, .wy-alert-info h6, .wy-alert-light h1, .wy-alert-light h2, .wy-alert-light h3, .wy-alert-light h4, .wy-alert-light h5, .wy-alert-light h6, .wy-alert-dark h1, .wy-alert-dark h2, .wy-alert-dark h3, .wy-alert-dark h4, .wy-alert-dark h5, .wy-alert-dark h6,
 .my-5,
+blockquote,
 figure,
 hr {
   margin-top: 3rem !important;
@@ -7732,6 +7731,7 @@ hr {
 
 .mb-5,
 .my-5,
+blockquote,
 figure,
 hr {
   margin-bottom: 3rem !important;
@@ -7832,7 +7832,7 @@ hr {
   padding-left: 0.5rem !important;
 }
 
-.p-3, .wy-blockquote, .wy-content pre, .wy-alert-primary pre, .wy-alert-secondary pre, .wy-alert-success pre, .wy-alert-danger pre, .wy-alert-warning pre, .wy-alert-info pre, .wy-alert-light pre, .wy-alert-dark pre {
+.p-3, .wy-content pre, .wy-alert-primary pre, .wy-alert-secondary pre, .wy-alert-success pre, .wy-alert-danger pre, .wy-alert-warning pre, .wy-alert-info pre, .wy-alert-light pre, .wy-alert-dark pre, blockquote {
   padding: 1rem !important;
 }
 
@@ -8038,7 +8038,8 @@ hr {
 }
 
 .mr-auto,
-.mx-auto {
+.mx-auto,
+blockquote {
   margin-right: auto !important;
 }
 
@@ -8048,7 +8049,8 @@ hr {
 }
 
 .ml-auto,
-.mx-auto {
+.mx-auto,
+blockquote {
   margin-left: auto !important;
 }
 
@@ -10134,6 +10136,17 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-style: italic;
+}
+
+blockquote footer {
+  font-size: 1.125rem;
+  text-align: right;
+}
+blockquote footer cite {
+  font-style: normal;
+}
+blockquote footer cite::before {
+  content: "—";
 }
 
 .wy-nav-bar .navbar-brand img {
