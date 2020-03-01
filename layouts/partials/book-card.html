@@ -3,7 +3,9 @@
     <span class="wy-badge-featured">{{ i18n "books.featured" }}</span>
     {{ end }}
     {{ with .book.Resources.GetMatch "cover" }}
-    <img src="{{ .RelPermalink }}" alt="" class="card-img-top p-3">
+    <div class="card-img-top p-3">
+        <img src="{{ .RelPermalink }}" alt="" class="mw-100 mh-100">
+    </div>
     {{ end }}
     <div class="card-body">
         {{ if .book.Params.series }}

@@ -1,18 +1,20 @@
 {{ $active := .active }}
 <nav class="wy-toc-nav">
-    <h6>{{ i18n "books.toc" }}</h6>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tocNavbarNavAltMarkup"
-        aria-controls="tocNavbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="tocNavbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a href="{{ .book.RelPermalink }}"
-                class="nav-item nav-link{{ if eq .book .active }} active{{ end }}">{{ i18n "books.index.h" }}</a>
-            {{ range .book.Pages.ByParam "order" }}
-            <a href=" {{ .RelPermalink }}"
-                class="nav-item nav-link{{ if eq . $active }} active{{ end }}">{{ .Title }}</a>
-            {{ end }}
+    <div class="container">
+        <h6>{{ i18n "books.toc" }}</h6>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tocNavbarNavAltMarkup"
+            aria-controls="tocNavbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="tocNavbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a href="{{ .book.RelPermalink }}"
+                    class="nav-item nav-link{{ if eq .book .active }} active{{ end }}">{{ i18n "books.index.h" }}</a>
+                {{ range .book.Pages.ByParam "order" }}
+                <a href=" {{ .RelPermalink }}"
+                    class="nav-item nav-link{{ if eq . $active }} active{{ end }}">{{ .Title }}</a>
+                {{ end }}
+            </div>
         </div>
     </div>
 </nav>

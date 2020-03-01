@@ -7752,7 +7752,8 @@ hr {
 }
 
 .pr-0,
-.px-0 {
+.px-0,
+.wy-toc-nav {
   padding-right: 0 !important;
 }
 
@@ -7762,7 +7763,8 @@ hr {
 }
 
 .pl-0,
-.px-0 {
+.px-0,
+.wy-toc-nav {
   padding-left: 0 !important;
 }
 
