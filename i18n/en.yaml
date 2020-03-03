@@ -54,7 +54,7 @@
 - id: home.h-1
   translation: Hi, It’s a Pleasure to Meet You!
 - id: home.p-1
-  translation: This is the place where we publish our stories. You can read more [about us](/en/authors/) or dive right into our [books](/en/books/)!
+  translation: This is the place where we publish our stories. You can read more about us or dive right into our books!
 
 - id: books.featured
   translation: featured

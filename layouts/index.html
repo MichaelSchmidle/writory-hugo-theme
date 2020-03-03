@@ -25,8 +25,8 @@
         </div>
     </div>
 </div>
-{{ $books := .GetPage "/books" }}
-{{ $series := .GetPage "/series" }}
+{{ $books := .GetPage (printf "%s" (i18n "nav.books.url" | relLangURL)) }}
+{{ $series := .GetPage (printf "%s" (i18n "nav.series.url" | relLangURL)) }}
 {{ if or $books $series }}
 <div class="bg-light py-5">
     <div class="container">
