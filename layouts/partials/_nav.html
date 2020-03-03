@@ -10,15 +10,20 @@
             <div class="navbar-nav mr-auto">
                 <a href="{{ .Site.Home.RelPermalink }}"
                     class="nav-item nav-link{{ if .IsHome }} active{{ end }}">{{ i18n "nav.home" }}{{ if .IsHome }}
-                    <span class="sr-only">(current)</span>{{ end }}</a>
-                {{ if $bookSection := .Site.GetPage "section" "books" }}<a href="{{ $bookSection.RelPermalink }}"
-                    class="nav-item nav-link{{ if in .RelPermalink $bookSection.RelPermalink }} active{{ end }}">{{ $bookSection.Title }}</a>{{ end }}
-                {{ $seriesTaxonomy := .Site.GetPage "taxonomy" "series" }}
-                <a href="{{ $seriesTaxonomy.RelPermalink }}"
-                    class="nav-item nav-link{{ if in .RelPermalink $seriesTaxonomy.RelPermalink }} active{{ end }}">{{ $seriesTaxonomy.Title }}</a>
-                {{ $authorsTaxonomy := .Site.GetPage "taxonomy" "authors" }}
-                <a href="{{ $authorsTaxonomy.RelPermalink }}"
-                    class="nav-item nav-link{{ if in .RelPermalink $authorsTaxonomy.RelPermalink }} active{{ end }}">{{ $authorsTaxonomy.Title }}</a>
+                    <span class="sr-only">({{ i18n "nav.current" }})</span>{{ end }}</a>
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.header }}
+                <a href="{{ .URL | relURL }}"
+                    class="nav-item nav-link{{ if or ($currentPage.HasMenuCurrent "header" .) ($currentPage.IsMenuCurrent "header" .) }} active{{ end }}">{{ .Name }}{{ if or ($currentPage.HasMenuCurrent "header" .) ($currentPage.IsMenuCurrent "header" .) }}
+                    <span class="sr-only">({{ i18n "nav.current" }})</span>{{ end }}</a>
+                {{ else }}
+                <a href="{{ i18n "nav.books.url" | relLangURL }}"
+                    class="nav-item nav-link{{ if in .RelPermalink (printf "/%s/" (i18n "nav.books.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.books" }}</a>
+                <a href="{{ i18n "nav.series.url" | relLangURL }}"
+                    class="nav-item nav-link{{ if in .RelPermalink (printf "/%s/" (i18n "nav.series.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.series" }}</a>
+                <a href="{{ i18n "nav.authors.url" | relLangURL }}"
+                    class="nav-item nav-link{{ if in .RelPermalink (printf "/%s/" (i18n "nav.authors.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.authors" }}</a>
+                {{ end }}
             </div>
             {{ if .IsTranslated }}
             <hr class="d-sm-block d-md-none">

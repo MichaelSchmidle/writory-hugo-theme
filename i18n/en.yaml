@@ -1,5 +1,19 @@
 - id: nav.home
   translation: Home
+- id: nav.books
+  translation: Books
+- id: nav.books.url
+  translation: books
+- id: nav.series
+  translation: Series
+- id: nav.series.url
+  translation: series
+- id: nav.authors
+  translation: Authors
+- id: nav.authors.url
+  translation: authors
+- id: nav.current
+  translation: current
 
 - id: footer.p-1
   translation: All rights reserved

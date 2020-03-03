@@ -1,4 +1,5 @@
 ---
+type: books
 order: 0
 title: {{ replace .Name "-" " " | title }}
 summary: ""

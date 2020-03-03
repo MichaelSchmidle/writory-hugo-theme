@@ -1,4 +1,5 @@
 ---
+type: authors
 title: {{ replace .Name "-" " " | title }}
 summary: ""
 links: []

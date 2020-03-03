@@ -1,5 +1,19 @@
 - id: nav.home
   translation: Start
+- id: nav.books
+  translation: Bücher
+- id: nav.books.url
+  translation: buecher
+- id: nav.series
+  translation: Serien
+- id: nav.series.url
+  translation: serien
+- id: nav.authors
+  translation: Autoren
+- id: nav.authors.url
+  translation: autoren
+- id: nav.current
+  translation: jetzig
 
 - id: footer.p-1
   translation: Alle Rechte vorbehalten

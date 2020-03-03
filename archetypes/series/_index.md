@@ -1,4 +1,5 @@
 ---
+type: series
 title: {{ replace .Name "-" " " | title }}
 summary: ""
 resources:
