@@ -8,13 +8,13 @@
     </div>
     {{ end }}
     <div class="card-body">
-        {{ if .book.Params.series }}
-        <small class="card-subtitle text-muted">{{ .book.Params.series }}</small>
+        {{ if index .book.Params (i18n "nav.series.url") }}
+        <small class="card-subtitle text-muted">{{ index .book.Params (i18n "nav.series.url") }}</small>
         {{ end }}
         <h2 class="card-title">{{ .book.Title }}</h2>
-        {{ if .book.Params.authors }}
+        {{ if index .book.Params (i18n "nav.authors.url") }}
         <p class="card-subtitle text-muted">{{ i18n "books.by" }}
-            {{ delimit .book.Params.authors ", " }}
+            {{ delimit (index .book.Params (i18n "nav.authors.url")) ", " }}
         </p>
         {{ end }}
         <a href="{{ .book.RelPermalink }}" role="button"

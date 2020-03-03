@@ -87,6 +87,8 @@
 - id: books.next-chapter.h
   translation: Next Chapter
 
+- id: series.of-books.name
+  translation: "{{ .name }} is a series of {{ .books }}:"
 - id: series.featured
   translation: featured
 - id: series.of-books

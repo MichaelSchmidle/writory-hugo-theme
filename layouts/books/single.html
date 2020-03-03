@@ -41,26 +41,26 @@
         </div>
     </div>
 </div>
-{{ if and (not ($chapters.Prev .)) (or .Parent.Params.series .Parent.Params.authors) }}
+{{ if and (not ($chapters.Prev .)) (or (index .Parent.Params "nav.series.url") (index .Parent.Params "nav.authors.url")) }}
 <div class="bg-light py-5">
     <div class="container">
-        {{ with .Parent.Params.series }}
+        {{ with index .Parent.Params (i18n "nav.series.url") }}
         <h6>{{ i18n "books.about-series.h" }}</h6>
         <div class="row">
             <div class="col-md-6 col-lg-4">
-                {{ partial "series-card.html" (dict "series" ($.Site.GetPage (printf "/%s/%s" "series" (. | urlize))) "primary" true) }}
+                {{ partial "series-card.html" (dict "series" ($.Site.GetPage (printf "%s/%s" (i18n "nav.series.url" | relLangURL ) (. | urlize))) "primary" true) }}
             </div>
         </div>
         {{ end }}
-        {{ if and .Parent.Params.series .Parent.Params.authors }}
+        {{ if and (index .Parent.Params (i18n "nav.series.url")) (index .Parent.Params (i18n "nav.authors.url")) }}
         <hr>
         {{ end }}
-        {{ with .Parent.Params.authors }}
+        {{ with index .Parent.Params (i18n "nav.authors.url") }}
         <h6>{{ i18n "books.about-authors.h" (len .) }}</h6>
         <div class="row">
             {{ range . }}
             <div class="col-md-12 col-lg-6 mb-3">
-                {{ partial "author-card.html" (dict "author" ($.Site.GetPage (printf "/%s/%s" "authors" (. | urlize))) "primary" true) }}
+                {{ partial "author-card.html" (dict "author" ($.Site.GetPage (printf "%s/%s" (i18n "nav.authors.url" | relLangURL) (. | urlize))) "primary" true) }}
             </div>
             {{ end }}
         </div>

@@ -15,7 +15,7 @@
 {{ end }}
 {{ if .Pages }}
 <div class="container py-5">
-    <p>The following book{{ if ne (len .Pages) 1 }}s are{{ else }} is{{ end }} part of the {{ .Title }} series:</p>
+    <p>{{ i18n "series.of-books.name" (dict "name" .Title "books" (i18n "books.of-books" (len .Pages))) }}</p>
     <div class="row">
         {{ range (.Pages.ByParam "featured") }}
         <div class="col-md-6 col-lg-4 mb-3">

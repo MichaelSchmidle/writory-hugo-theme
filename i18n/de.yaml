@@ -87,6 +87,8 @@
 - id: books.next-chapter.h
   translation: Nächstes Kapitel
 
+- id: series.of-books.name
+  translation: "{{ .name }} ist eine Serie aus {{ .books }}:"
 - id: series.featured
   translation: ausgewählt
 - id: series.of-books
