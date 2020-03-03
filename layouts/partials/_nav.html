@@ -18,11 +18,11 @@
                     <span class="sr-only">({{ i18n "nav.current" }})</span>{{ end }}</a>
                 {{ else }}
                 <a href="{{ i18n "nav.books.url" | relLangURL }}"
-                    class="nav-item nav-link{{ if in .RelPermalink (printf "/%s/" (i18n "nav.books.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.books" }}</a>
+                    class="nav-item nav-link{{ if in .RelPermalink (printf "%s/" (i18n "nav.books.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.books" }}</a>
                 <a href="{{ i18n "nav.series.url" | relLangURL }}"
-                    class="nav-item nav-link{{ if in .RelPermalink (printf "/%s/" (i18n "nav.series.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.series" }}</a>
+                    class="nav-item nav-link{{ if in .RelPermalink (printf "%s/" (i18n "nav.series.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.series" }}</a>
                 <a href="{{ i18n "nav.authors.url" | relLangURL }}"
-                    class="nav-item nav-link{{ if in .RelPermalink (printf "/%s/" (i18n "nav.authors.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.authors" }}</a>
+                    class="nav-item nav-link{{ if in .RelPermalink (printf "%s/" (i18n "nav.authors.url" | relLangURL)) }} active{{ end }}">{{ i18n "nav.authors" }}</a>
                 {{ end }}
             </div>
             {{ if .IsTranslated }}
