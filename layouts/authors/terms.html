@@ -16,7 +16,7 @@
     </div>
 </div>
 {{ else }}
-{{ $bookSection := .Site.GetPage "section" "books" }}
+{{ $bookSection := .Site.GetPage "section" (i18n "nav.books.url") }}
 {{ if $bookSection.Pages }}{{ partial "unreferenced.html" (i18n "authors.unreferenced.alert.p-1") }}{{ else }}{{ partial "unpublished.html" (i18n "authors.unpublished.alert.p-1") }}{{ end }}
 {{ end }}
 {{ end }}

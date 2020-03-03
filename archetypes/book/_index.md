@@ -1,5 +1,5 @@
 ---
-type: book
+type: books
 layout: toc
 title: {{ replace .Name "-" " " | title }}
 summary: ""
