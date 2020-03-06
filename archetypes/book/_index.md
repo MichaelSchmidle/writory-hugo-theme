@@ -3,8 +3,6 @@ type: books
 layout: toc
 title: {{ replace .Name "-" " " | title }}
 summary: ""
-authors: []
-series: ""
 resources:
 - name: cover
   src: ""
