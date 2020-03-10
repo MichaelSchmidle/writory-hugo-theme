@@ -2,7 +2,7 @@
     {{ range . }}
     {{ range $key, $element := . }}
     <a href="{{ index $element 0 }}" class="btn btn-light rounded-pill text-muted">{{ with (index $element 1) }}<i
-            class="{{ index $element 1 }}"></i> {{ end }}{{ $key }}</a>
+            class="{{ index $element 1 }} mr-1"></i>{{ end }}{{ $key }}</a>
     {{ end }}
     {{ end }}
 </div>
