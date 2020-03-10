@@ -13,7 +13,9 @@
 </head>
 
 <body>
-    {{ partial "_nav.html" . }}
+    <header>
+        {{ partial "_header.html" . }}
+    </header>
     <main>
         {{ block "main" . }}{{ end }}
     </main>

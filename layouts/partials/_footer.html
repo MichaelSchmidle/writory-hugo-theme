@@ -11,7 +11,8 @@
         </div>
         {{ if .Site.Params.logogram }}
         <div class="col-lg-1 align-self-center mb-3">
-            <p class="mb-0"><img src="/{{ .Site.Params.logogram }}" alt="{{ .Site.Title }}" class="wy-logogram"></p>
+            <p class="mb-0"><img src="{{ .Site.Params.logogram | relURL }}" alt="{{ .Site.Title }}" class="wy-logogram">
+            </p>
         </div>
         {{ end }}
         <div class="col-lg mb-3">
